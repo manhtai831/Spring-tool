@@ -8,7 +8,7 @@ public class HashSecurity {
     public static String SHA256 = "SHA-256";
     public static String MD5 = "MD5";
 
-    private static String hash(String plainText, String hashType) throws NoSuchAlgorithmException {
+    public static String hash(String plainText, String hashType) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance(hashType);
         byte[] bytes = digest.digest(plainText.getBytes(StandardCharsets.UTF_8));
         final StringBuilder hexString = new StringBuilder();

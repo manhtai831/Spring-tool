@@ -1,5 +1,6 @@
 package com.example.spring_demo_app.domain.service;
 
+import com.example.spring_demo_app.common.security.UserPrinciple;
 import com.example.spring_demo_app.data.model.UserModel;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,11 +11,11 @@ public interface UserService {
 
     List<UserModel> getAllUser();
 
-
+    UserModel login(String userName,String password);
 
     UserModel getUserInfo();
 
-    Optional<UserDetails> getUserById(Long id);
+    Optional<UserPrinciple> getUserById(Long id);
 
     UserModel getUserWithAuthentication();
 

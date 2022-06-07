@@ -1,16 +1,23 @@
 package com.example.spring_demo_app.common.security;
 
+import com.example.spring_demo_app.domain.entity.UserEntity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.swing.text.html.Option;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserPrinciple implements UserDetails {
 
     private Long id;
@@ -34,6 +41,16 @@ public class UserPrinciple implements UserDetails {
                 user.getUsername(),
                 user.getPassword(),
                 authorities
+        );
+    }
+
+    public static UserPrinciple buildFromEntity(UserEntity user) {
+
+
+        return new UserPrinciple(user.getId(),
+                user.getUserName(),
+                user.getPassword(),
+                null
         );
     }
 

@@ -15,11 +15,11 @@ import java.util.Date;
 @Service
 public class JwtServiceImpl implements JwtService {
     @Override
-    public String generateTokenLogin(Authentication authentication) {
-        UserPrinciple userPrincipal = (UserPrinciple) authentication.getPrincipal();
+    public String generateTokenLogin(Long id) {
+//        UserPrinciple userPrincipal = (UserPrinciple) authentication.getPrincipal();
 
         return Jwts.builder()
-                .setSubject(userPrincipal.getId().toString())
+                .setSubject(id.toString())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + EXPIRE_TIME * 1000))
                 .signWith(SignatureAlgorithm.HS512, SECRET_KEY)

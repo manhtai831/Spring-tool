@@ -4,6 +4,7 @@ import com.example.spring_demo_app.common.contants.AppErrorCode;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.common.model.Error;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -13,15 +14,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class SystemExceptionController {
 
 
-    @ExceptionHandler({AuthenticationException.class})
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public BaseResponse handleAuthenticationException(AuthenticationException e) {
+    @ExceptionHandler({AppAuthenticationException.class})
+    @ResponseStatus(HttpStatus.OK)
+    public BaseResponse handleAuthenticationException(AppAuthenticationException e) {
         e.printStackTrace();
         return BaseResponse.error(Error.custom(AppErrorCode.UNAUTHORIZED, "Unauthorized"));
     }
 
-    @ExceptionHandler({AppException.class})
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler({NotFoundException.class})
     public BaseResponse handleExistException(AppException e) {
         return BaseResponse.error(Error.custom(AppErrorCode.NOT_FOUND, e.getMessage()));
     }

@@ -1,6 +1,8 @@
 package com.example.spring_demo_app.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,8 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "users")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserEntity {
 
     @Id
@@ -33,4 +37,8 @@ public class UserEntity {
     private Long updateBy;
 
 
+    public UserEntity(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
 }

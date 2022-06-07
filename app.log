@@ -1,96 +1,967 @@
-2022-06-06 08:32:36.528  INFO 14624 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 14624 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
-2022-06-06 08:32:36.535  INFO 14624 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-06-06 08:32:37.643 ERROR 14624 --- [main] o.s.boot.SpringApplication               : Application run failed
+2022-06-07 00:00:13.167  INFO 1540 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 1540 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 00:00:13.179  INFO 1540 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 00:00:13.759  INFO 1540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 00:00:13.798  INFO 1540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interfaces.
+2022-06-07 00:00:14.167  INFO 1540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 00:00:14.173  INFO 1540 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 00:00:14.173  INFO 1540 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 00:00:14.278  INFO 1540 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 00:00:14.278  INFO 1540 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1027 ms
+2022-06-07 00:00:14.330  WARN 1540 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 00:00:14.389  INFO 1540 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 00:00:14.424  INFO 1540 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 00:00:14.515  INFO 1540 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 00:00:14.572  INFO 1540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 00:00:14.662  INFO 1540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 00:00:14.671  INFO 1540 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 00:00:15.030  INFO 1540 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 00:00:15.035  INFO 1540 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 00:00:15.316 DEBUG 1540 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 00:00:15.460 DEBUG 1540 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 00:00:15.535 DEBUG 1540 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 00:00:15.547  INFO 1540 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35dc849b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dce481b, org.springframework.security.web.header.HeaderWriterFilter@eddc9bb, org.springframework.web.filter.CorsFilter@276aa33f, org.springframework.security.web.authentication.logout.LogoutFilter@54c3e686, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@838e109, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45753c22, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@301770d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34065642, org.springframework.security.web.session.SessionManagementFilter@7e63374b, org.springframework.security.web.access.ExceptionTranslationFilter@39b95a80, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6baee63b]
+2022-06-07 00:00:15.596 DEBUG 1540 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 00:00:15.620 DEBUG 1540 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 00:00:15.735  INFO 1540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 00:00:15.742  INFO 1540 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.908 seconds (JVM running for 3.601)
+2022-06-07 00:00:17.029  INFO 1540 --- [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 00:00:17.031  INFO 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 00:00:17.031 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 00:00:17.031 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 00:00:17.031 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 00:00:17.031 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@72641613
+2022-06-07 00:00:17.032 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@e88e14
+2022-06-07 00:00:17.032 DEBUG 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 00:00:17.032  INFO 1540 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 00:00:17.045 DEBUG 1540 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:04:58.128  INFO 15212 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 15212 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 00:04:58.131  INFO 15212 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 00:04:58.690  INFO 15212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 00:04:58.732  INFO 15212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interfaces.
+2022-06-07 00:04:59.097  INFO 15212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 00:04:59.104  INFO 15212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 00:04:59.104  INFO 15212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 00:04:59.207  INFO 15212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 00:04:59.207  INFO 15212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1025 ms
+2022-06-07 00:04:59.259  WARN 15212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 00:04:59.315  INFO 15212 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 00:04:59.344  INFO 15212 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 00:04:59.425  INFO 15212 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 00:04:59.485  INFO 15212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 00:04:59.581  INFO 15212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 00:04:59.590  INFO 15212 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 00:04:59.952  INFO 15212 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 00:04:59.957  INFO 15212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 00:05:00.205 DEBUG 15212 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 00:05:00.335 DEBUG 15212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 00:05:00.395 DEBUG 15212 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 00:05:00.405  INFO 15212 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29e3c28, org.springframework.security.web.context.SecurityContextPersistenceFilter@225ac5e7, org.springframework.security.web.header.HeaderWriterFilter@476a970c, org.springframework.web.filter.CorsFilter@480994d3, org.springframework.security.web.authentication.logout.LogoutFilter@349996a6, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@22bfd4b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44948ac6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fc56d61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7146c6ea, org.springframework.security.web.session.SessionManagementFilter@27d5eb00, org.springframework.security.web.access.ExceptionTranslationFilter@7ac90dab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8b1170f]
+2022-06-07 00:05:00.446 DEBUG 15212 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 00:05:00.467 DEBUG 15212 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 00:05:00.561  INFO 15212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 00:05:00.568  INFO 15212 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.746 seconds (JVM running for 3.416)
+2022-06-07 00:05:03.564  INFO 15212 --- [http-nio-3001-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 00:05:03.565  INFO 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 00:05:03.565 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 00:05:03.565 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 00:05:03.565 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 00:05:03.566 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@af94b0b
+2022-06-07 00:05:03.567 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6e225c34
+2022-06-07 00:05:03.567 DEBUG 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 00:05:03.567  INFO 15212 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-07 00:05:03.582 DEBUG 15212 --- [http-nio-3001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:06:34.484  INFO 11788 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 11788 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 00:06:34.487  INFO 11788 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 00:06:35.004  INFO 11788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 00:06:35.047  INFO 11788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-06-07 00:06:35.408  INFO 11788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 00:06:35.414  INFO 11788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 00:06:35.414  INFO 11788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 00:06:35.507  INFO 11788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 00:06:35.508  INFO 11788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 978 ms
+2022-06-07 00:06:35.561  WARN 11788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 00:06:35.612  INFO 11788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 00:06:35.639  INFO 11788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 00:06:35.718  INFO 11788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 00:06:35.777  INFO 11788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 00:06:35.875  INFO 11788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 00:06:35.884  INFO 11788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 00:06:36.288  INFO 11788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 00:06:36.294  INFO 11788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 00:06:36.558 DEBUG 11788 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 00:06:36.699 DEBUG 11788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 00:06:36.760 DEBUG 11788 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 00:06:36.770  INFO 11788 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c7c898a, org.springframework.security.web.context.SecurityContextPersistenceFilter@78e50fca, org.springframework.security.web.header.HeaderWriterFilter@64e657b0, org.springframework.web.filter.CorsFilter@4a86be01, org.springframework.security.web.authentication.logout.LogoutFilter@44948ac6, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@4a2dbcfc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76c587ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75adb1c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3cae4518, org.springframework.security.web.session.SessionManagementFilter@e4bb10b, org.springframework.security.web.access.ExceptionTranslationFilter@7d3815f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2a0ce342]
+2022-06-07 00:06:36.813 DEBUG 11788 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 00:06:36.836 DEBUG 11788 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 00:06:36.942  INFO 11788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 00:06:36.950  INFO 11788 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.797 seconds (JVM running for 3.497)
+2022-06-07 00:06:38.401  INFO 11788 --- [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 00:06:38.403  INFO 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 00:06:38.403 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 00:06:38.403 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 00:06:38.403 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 00:06:38.404 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5b71af0d
+2022-06-07 00:06:38.404 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@530df3ab
+2022-06-07 00:06:38.404 DEBUG 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 00:06:38.404  INFO 11788 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 00:06:38.416 DEBUG 11788 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:07:09.227 DEBUG 11788 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:07:21.641 DEBUG 11788 --- [http-nio-3001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:07:48.247  INFO 12792 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 12792 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 00:07:48.251  INFO 12792 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 00:07:48.790  INFO 12792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 00:07:48.832  INFO 12792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-06-07 00:07:49.183  INFO 12792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 00:07:49.189  INFO 12792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 00:07:49.189  INFO 12792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 00:07:49.283  INFO 12792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 00:07:49.283  INFO 12792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
+2022-06-07 00:07:49.334  WARN 12792 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 00:07:49.387  INFO 12792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 00:07:49.416  INFO 12792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 00:07:49.495  INFO 12792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 00:07:49.551  INFO 12792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 00:07:49.642  INFO 12792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 00:07:49.650  INFO 12792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 00:07:50.034  INFO 12792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 00:07:50.039  INFO 12792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 00:07:50.278 DEBUG 12792 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 00:07:50.411 DEBUG 12792 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 00:07:50.463 DEBUG 12792 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 00:07:50.472  INFO 12792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31450fc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2d34866a, org.springframework.security.web.header.HeaderWriterFilter@7ac90dab, org.springframework.web.filter.CorsFilter@52b30dcd, org.springframework.security.web.authentication.logout.LogoutFilter@7112b21a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27d5eb00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78bce1c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49de1505, org.springframework.security.web.session.SessionManagementFilter@3ce7a354, org.springframework.security.web.access.ExceptionTranslationFilter@71eaef6a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@550f522b]
+2022-06-07 00:07:50.511 DEBUG 12792 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 00:07:50.532 DEBUG 12792 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 00:07:50.624  INFO 12792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 00:07:50.631  INFO 12792 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.725 seconds (JVM running for 3.532)
+2022-06-07 00:07:51.727  INFO 12792 --- [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 00:07:51.728  INFO 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 00:07:51.728 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 00:07:51.728 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 00:07:51.728 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 00:07:51.729 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3e149513
+2022-06-07 00:07:51.729 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@29fc83c5
+2022-06-07 00:07:51.729 DEBUG 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 00:07:51.729  INFO 12792 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 00:07:51.743 DEBUG 12792 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 00:07:53.567 DEBUG 12792 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:11:44.394  INFO 15104 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 15104 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:11:44.396  INFO 15104 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:11:45.326  INFO 15104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:11:45.376  INFO 15104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:11:45.780  INFO 15104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:11:45.787  INFO 15104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:11:45.788  INFO 15104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:11:45.902  INFO 15104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:11:45.902  INFO 15104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1462 ms
+2022-06-07 08:11:45.959  WARN 15104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:11:46.026  INFO 15104 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:11:46.071  INFO 15104 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:11:46.189  INFO 15104 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:11:46.264  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:11:46.375  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:11:46.386  INFO 15104 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:11:46.898  INFO 15104 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:11:46.905  INFO 15104 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:11:47.286 DEBUG 15104 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:11:47.451 DEBUG 15104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:11:47.527 DEBUG 15104 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:11:47.540  INFO 15104 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59ec5a0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@45b6c666, org.springframework.security.web.header.HeaderWriterFilter@62aee901, org.springframework.web.filter.CorsFilter@29431f61, org.springframework.security.web.authentication.logout.LogoutFilter@24731caf, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@e2f6e13, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fc56d61, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ba08a09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f98cff, org.springframework.security.web.session.SessionManagementFilter@78bce1c4, org.springframework.security.web.access.ExceptionTranslationFilter@15ee8861, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1bbc1b90]
+2022-06-07 08:11:47.600 DEBUG 15104 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:11:47.633 DEBUG 15104 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:11:47.760  INFO 15104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:11:47.768  INFO 15104 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 3.799 seconds (JVM running for 4.621)
+2022-06-07 08:11:56.669  INFO 15104 --- [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:11:56.670  INFO 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:11:56.671 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:11:56.671 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:11:56.671 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:11:56.671 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@749c0669
+2022-06-07 08:11:56.672 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@13b4ee4e
+2022-06-07 08:11:56.672 DEBUG 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:11:56.672  INFO 15104 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:11:56.687 DEBUG 15104 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:12:02.565 DEBUG 15104 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:02.571  INFO 15104 --- [http-nio-3001-exec-3] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: 8KzPX92LJqcSI3SR
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : 99077156-31a6-4f51-a483-6f26ddff0a7d
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
 
-java.lang.NoClassDefFoundError: org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor
-	at org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension.<clinit>(JpaRepositoryConfigExtension.java:74) ~[spring-data-jpa-2.6.4.jar:2.6.4]
-	at org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesRegistrar.getRepositoryConfigurationExtension(JpaRepositoriesRegistrar.java:55) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.19.jar:5.3.19]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
-	at com.example.spring_demo_app.SpringDemoAppApplication.main(SpringDemoAppApplication.java:14) ~[classes/:na]
-Caused by: java.lang.ClassNotFoundException: org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	... 21 common frames omitted
+2022-06-07 08:12:02.574 DEBUG 15104 --- [http-nio-3001-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:02.576 DEBUG 15104 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:02.576 DEBUG 15104 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:02.733 DEBUG 15104 --- [http-nio-3001-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:02.743  INFO 15104 --- [http-nio-3001-exec-3] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:8KzPX92LJqcSI3SR
 
-2022-06-06 08:32:59.701  INFO 8584 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 8584 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
-2022-06-06 08:32:59.703  INFO 8584 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-06-06 08:33:00.275 ERROR 8584 --- [main] o.s.boot.SpringApplication               : Application run failed
+{"at":"07/06/2022 08:12:02","request_id":"8KzPX92LJqcSI3SR","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzIyLCJleHAiOjE2NTQ1ODUwNTJ9.XK4s4sAcAsAgFdo-92sztqHy0sLV3fyHaxiHCQuO48DSNSXTt0TIwGHemqtRyRAEQTcGBeRIISzJQxudI1pSZQ"}}
 
-java.lang.NoClassDefFoundError: org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor
-	at org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension.<clinit>(JpaRepositoryConfigExtension.java:74) ~[spring-data-jpa-2.6.4.jar:2.6.4]
-	at org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesRegistrar.getRepositoryConfigurationExtension(JpaRepositoriesRegistrar.java:55) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.19.jar:5.3.19]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
-	at com.example.spring_demo_app.SpringDemoAppApplication.main(SpringDemoAppApplication.java:14) ~[classes/:na]
-Caused by: java.lang.ClassNotFoundException: org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	... 21 common frames omitted
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:02.760 DEBUG 15104 --- [http-nio-3001-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:02, request_id=8KzPX92LJqcSI3SR, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:02.769 DEBUG 15104 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:02.770 DEBUG 15104 --- [http-nio-3001-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:05.221 DEBUG 15104 --- [http-nio-3001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:05.225  INFO 15104 --- [http-nio-3001-exec-4] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: vCVFPuuQYz6oVFjF
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : f0cadc26-d7de-4cdf-b42f-6e924f6d6ebd
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
 
-2022-06-06 08:33:18.701  INFO 8104 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 8104 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
-2022-06-06 08:33:18.704  INFO 8104 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-06-06 08:33:19.299 ERROR 8104 --- [main] o.s.boot.SpringApplication               : Application run failed
+2022-06-07 08:12:05.225 DEBUG 15104 --- [http-nio-3001-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:05.226 DEBUG 15104 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:05.226 DEBUG 15104 --- [http-nio-3001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:05.231 DEBUG 15104 --- [http-nio-3001-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:05.232  INFO 15104 --- [http-nio-3001-exec-4] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:vCVFPuuQYz6oVFjF
 
-java.lang.NoClassDefFoundError: org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor
-	at org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension.<clinit>(JpaRepositoryConfigExtension.java:74) ~[spring-data-jpa-2.6.4.jar:2.6.4]
-	at org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesRegistrar.getRepositoryConfigurationExtension(JpaRepositoriesRegistrar.java:55) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.19.jar:5.3.19]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.19.jar:5.3.19]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
-	at com.example.spring_demo_app.SpringDemoAppApplication.main(SpringDemoAppApplication.java:14) ~[classes/:na]
-Caused by: java.lang.ClassNotFoundException: org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	... 21 common frames omitted
+{"at":"07/06/2022 08:12:05","request_id":"vCVFPuuQYz6oVFjF","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzI1LCJleHAiOjE2NTQ1ODUwNTV9.V3-QEZ2bkRNKH-ucwcTeluczItgpYpV1fKcbuG3v8c-9RGWtW-i4Au0bwBTo675MuQRqwHpyVD14ftSFrL3Nkg"}}
 
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:05.232 DEBUG 15104 --- [http-nio-3001-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:05, request_id=vCVFPuuQYz6oVFjF, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:05.233 DEBUG 15104 --- [http-nio-3001-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:05.233 DEBUG 15104 --- [http-nio-3001-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:05.977 DEBUG 15104 --- [http-nio-3001-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:05.980  INFO 15104 --- [http-nio-3001-exec-5] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: SjPKpjzwc4N9HBm2
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : 2f3b4aca-0580-4315-a443-a7fde2f34005
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:05.980 DEBUG 15104 --- [http-nio-3001-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:05.980 DEBUG 15104 --- [http-nio-3001-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:05.980 DEBUG 15104 --- [http-nio-3001-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:05.983 DEBUG 15104 --- [http-nio-3001-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:05.984  INFO 15104 --- [http-nio-3001-exec-5] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:SjPKpjzwc4N9HBm2
+
+{"at":"07/06/2022 08:12:05","request_id":"SjPKpjzwc4N9HBm2","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzI1LCJleHAiOjE2NTQ1ODUwNTV9.V3-QEZ2bkRNKH-ucwcTeluczItgpYpV1fKcbuG3v8c-9RGWtW-i4Au0bwBTo675MuQRqwHpyVD14ftSFrL3Nkg"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:05.984 DEBUG 15104 --- [http-nio-3001-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:05, request_id=SjPKpjzwc4N9HBm2, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:05.985 DEBUG 15104 --- [http-nio-3001-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:05.985 DEBUG 15104 --- [http-nio-3001-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:10.072 DEBUG 15104 --- [http-nio-3001-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:10.074  INFO 15104 --- [http-nio-3001-exec-6] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: 3qEcJGBMUukbESLh
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : 5171bb2b-c5ee-49c5-8324-37a4e702dbe8
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:10.074 DEBUG 15104 --- [http-nio-3001-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:10.074 DEBUG 15104 --- [http-nio-3001-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:10.074 DEBUG 15104 --- [http-nio-3001-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:10.077 DEBUG 15104 --- [http-nio-3001-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:10.078  INFO 15104 --- [http-nio-3001-exec-6] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:3qEcJGBMUukbESLh
+
+{"at":"07/06/2022 08:12:10","request_id":"3qEcJGBMUukbESLh","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzMwLCJleHAiOjE2NTQ1ODUwNjB9.5MJka3AJMpNhlzuJJG3Cipjx3gvYfi0LEkrEKosg2h30xnRs7VKtDj8W8K276Wc8pjFY4i6Mh84SQsTAzuvbcw"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:10.078 DEBUG 15104 --- [http-nio-3001-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:10, request_id=3qEcJGBMUukbESLh, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:10.079 DEBUG 15104 --- [http-nio-3001-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:10.079 DEBUG 15104 --- [http-nio-3001-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:10.945 DEBUG 15104 --- [http-nio-3001-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:10.947  INFO 15104 --- [http-nio-3001-exec-7] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: mkFlF8VEMDcG89uo
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : 528ad723-2e6a-40f0-a2af-90b994e280ec
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:10.948 DEBUG 15104 --- [http-nio-3001-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:10.948 DEBUG 15104 --- [http-nio-3001-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:10.948 DEBUG 15104 --- [http-nio-3001-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:10.951 DEBUG 15104 --- [http-nio-3001-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:10.952  INFO 15104 --- [http-nio-3001-exec-7] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:mkFlF8VEMDcG89uo
+
+{"at":"07/06/2022 08:12:10","request_id":"mkFlF8VEMDcG89uo","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzMwLCJleHAiOjE2NTQ1ODUwNjB9.5MJka3AJMpNhlzuJJG3Cipjx3gvYfi0LEkrEKosg2h30xnRs7VKtDj8W8K276Wc8pjFY4i6Mh84SQsTAzuvbcw"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:10.952 DEBUG 15104 --- [http-nio-3001-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:10, request_id=mkFlF8VEMDcG89uo, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:10.953 DEBUG 15104 --- [http-nio-3001-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:10.953 DEBUG 15104 --- [http-nio-3001-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:11.751 DEBUG 15104 --- [http-nio-3001-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:11.754  INFO 15104 --- [http-nio-3001-exec-8] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: anWquIZUgz3hllON
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : a0318625-01bf-4c9a-9e5b-568b03a741bf
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:11.754 DEBUG 15104 --- [http-nio-3001-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:11.754 DEBUG 15104 --- [http-nio-3001-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:11.754 DEBUG 15104 --- [http-nio-3001-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:11.756 DEBUG 15104 --- [http-nio-3001-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:11.757  INFO 15104 --- [http-nio-3001-exec-8] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:anWquIZUgz3hllON
+
+{"at":"07/06/2022 08:12:11","request_id":"anWquIZUgz3hllON","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzMxLCJleHAiOjE2NTQ1ODUwNjF9.JMlvxNnG36sRqsr8_TB3hpC3sPU1W5r_Z_LjJn-EnARMsxiQrEVI2L6tEwjdDK8p7q1GLR1oXiWURbqi3RF-Fw"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:11.757 DEBUG 15104 --- [http-nio-3001-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:11, request_id=anWquIZUgz3hllON, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:11.759 DEBUG 15104 --- [http-nio-3001-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:11.759 DEBUG 15104 --- [http-nio-3001-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:12.593 DEBUG 15104 --- [http-nio-3001-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:12.595  INFO 15104 --- [http-nio-3001-exec-9] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: lff6CvHktiDxkwRS
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : 6b3bee37-2f58-4db9-82ce-f4290240e6aa
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:12.595 DEBUG 15104 --- [http-nio-3001-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:12.595 DEBUG 15104 --- [http-nio-3001-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:12.595 DEBUG 15104 --- [http-nio-3001-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:12.597 DEBUG 15104 --- [http-nio-3001-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:12.598  INFO 15104 --- [http-nio-3001-exec-9] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:lff6CvHktiDxkwRS
+
+{"at":"07/06/2022 08:12:12","request_id":"lff6CvHktiDxkwRS","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzMyLCJleHAiOjE2NTQ1ODUwNjJ9.tTgio721DQ0I2pnkZFIXWIN74zzY2-AxwW7dprMp0s4MsF-Syprog_ZxT-HUr5P3hE-6G6p6bmTuI3U6Tsja0w"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:12.598 DEBUG 15104 --- [http-nio-3001-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:12, request_id=lff6CvHktiDxkwRS, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:12.599 DEBUG 15104 --- [http-nio-3001-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:12.599 DEBUG 15104 --- [http-nio-3001-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:13.606 DEBUG 15104 --- [http-nio-3001-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:13.612  INFO 15104 --- [http-nio-3001-exec-10] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: gFwL9FcjrL5OOQeO
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : cd64e7e1-8a61-410b-8f3e-3d0f038d7738
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:13.612 DEBUG 15104 --- [http-nio-3001-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:13.613 DEBUG 15104 --- [http-nio-3001-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:13.613 DEBUG 15104 --- [http-nio-3001-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:13.619 DEBUG 15104 --- [http-nio-3001-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:13.620  INFO 15104 --- [http-nio-3001-exec-10] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:gFwL9FcjrL5OOQeO
+
+{"at":"07/06/2022 08:12:13","request_id":"gFwL9FcjrL5OOQeO","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzMzLCJleHAiOjE2NTQ1ODUwNjN9.__GcUSbC-uwZ-rkEE5ZqN4XRiIrCZ7tYbQw9Oun1FvFyzcrol7JqAKbuc36fIxSRIgH5n7k95T8Zsg2ctM_9ow"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:13.620 DEBUG 15104 --- [http-nio-3001-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:13, request_id=gFwL9FcjrL5OOQeO, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:13.621 DEBUG 15104 --- [http-nio-3001-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:13.621 DEBUG 15104 --- [http-nio-3001-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:14.522 DEBUG 15104 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:14.524  INFO 15104 --- [http-nio-3001-exec-1] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: CbHR8YlJJkaNKPB2
+[PATH]: /api/app/v1/user/login
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTMzNDgyLCJleHAiOjE2NTQ1NTQyMTJ9.OsVEL30YmSDy_9Gr7fvlBAF-EJ-fqPOiT60qblp8ld-4vrQTn2NnUEXtSTxB4QgU5jwW98Cbbh9FpuMYeHWc3g
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : aea1f305-88fa-4b07-b41c-d570088757f4
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:12:14.525 DEBUG 15104 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/login]
+2022-06-07 08:12:14.525 DEBUG 15104 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/login", parameters={}
+2022-06-07 08:12:14.525 DEBUG 15104 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#login()
+2022-06-07 08:12:14.528 DEBUG 15104 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:12:14.528  INFO 15104 --- [http-nio-3001-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:CbHR8YlJJkaNKPB2
+
+{"at":"07/06/2022 08:12:14","request_id":"CbHR8YlJJkaNKPB2","error":{"code":0,"message":"Thành công"},"data":{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzM0LCJleHAiOjE2NTQ1ODUwNjR9.K_Hp7u-cNo0NWx3x9FqLyC4r4J6jdlRaUm1M4u8TKYfqztUO-SuP0819OKis4ddGfG9Ld2fvSqlVGCHEgZQ_Sw"}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:12:14.528 DEBUG 15104 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:12:14, request_id=CbHR8YlJJkaNKPB2, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:12:14.529 DEBUG 15104 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-06-07 08:12:14.529 DEBUG 15104 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/login]
+2022-06-07 08:12:34.893 DEBUG 15104 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:13:06.561 DEBUG 15104 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:13:11.947 DEBUG 15104 --- [http-nio-3001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:13:48.688  INFO 9264 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 9264 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:13:48.692  INFO 9264 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:13:49.226  INFO 9264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:13:49.270  INFO 9264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:13:49.652  INFO 9264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:13:49.658  INFO 9264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:13:49.658  INFO 9264 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:13:49.754  INFO 9264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:13:49.754  INFO 9264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1019 ms
+2022-06-07 08:13:49.807  WARN 9264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:13:49.858  INFO 9264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:13:49.885  INFO 9264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:13:49.962  INFO 9264 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:13:50.018  INFO 9264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:13:50.112  INFO 9264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:13:50.120  INFO 9264 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:13:50.502  INFO 9264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:13:50.508  INFO 9264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:13:50.760 DEBUG 9264 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:13:50.896 DEBUG 9264 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:13:50.949 DEBUG 9264 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:13:50.959  INFO 9264 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@270097ce, org.springframework.security.web.context.SecurityContextPersistenceFilter@62aee901, org.springframework.security.web.header.HeaderWriterFilter@5535e9, org.springframework.web.filter.CorsFilter@8b1170f, org.springframework.security.web.authentication.logout.LogoutFilter@624494d4, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@7bdb4d69, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29b4444a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@225ac5e7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69cb134, org.springframework.security.web.session.SessionManagementFilter@31a024ea, org.springframework.security.web.access.ExceptionTranslationFilter@76c587ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c459194]
+2022-06-07 08:13:51.000 DEBUG 9264 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:13:51.023 DEBUG 9264 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:13:51.125  INFO 9264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:13:51.132  INFO 9264 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.793 seconds (JVM running for 3.607)
+2022-06-07 08:13:52.398  INFO 9264 --- [http-nio-3001-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:13:52.399  INFO 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:13:52.400 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:13:52.400 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:13:52.400 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:13:52.400 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@21ed4a51
+2022-06-07 08:13:52.401 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@129aaac1
+2022-06-07 08:13:52.401 DEBUG 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:13:52.401  INFO 9264 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-07 08:13:52.416 DEBUG 9264 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:15:01.181  INFO 2188 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 2188 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:15:01.183  INFO 2188 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:15:01.693  INFO 2188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:15:01.736  INFO 2188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:15:02.086  INFO 2188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:15:02.092  INFO 2188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:15:02.092  INFO 2188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:15:02.181  INFO 2188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:15:02.181  INFO 2188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 961 ms
+2022-06-07 08:15:02.235  WARN 2188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:15:02.288  INFO 2188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:15:02.316  INFO 2188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:15:02.396  INFO 2188 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:15:02.454  INFO 2188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:15:02.546  INFO 2188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:15:02.554  INFO 2188 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:15:02.932  INFO 2188 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:15:02.938  INFO 2188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:15:03.194 DEBUG 2188 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:15:03.331 DEBUG 2188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:15:03.383 DEBUG 2188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:15:03.392  INFO 2188 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52b30dcd, org.springframework.security.web.context.SecurityContextPersistenceFilter@26291192, org.springframework.security.web.header.HeaderWriterFilter@40d370fa, org.springframework.web.filter.CorsFilter@49de1505, org.springframework.security.web.authentication.logout.LogoutFilter@30bf881e, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@3b4f1eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b540131, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@189e96af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bbc1b90, org.springframework.security.web.session.SessionManagementFilter@2914a328, org.springframework.security.web.access.ExceptionTranslationFilter@e3692ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1842dc39]
+2022-06-07 08:15:03.434 DEBUG 2188 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:15:03.456 DEBUG 2188 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:15:03.554  INFO 2188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:15:03.561  INFO 2188 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.685 seconds (JVM running for 3.388)
+2022-06-07 08:15:06.635  INFO 2188 --- [http-nio-3001-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:15:06.636  INFO 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:15:06.636 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:15:06.637 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:15:06.637 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:15:06.637 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@787a4519
+2022-06-07 08:15:06.638 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3fb1948c
+2022-06-07 08:15:06.638 DEBUG 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:15:06.638  INFO 2188 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-07 08:15:06.655 DEBUG 2188 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:15:45.499  INFO 7200 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 7200 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:15:45.503  INFO 7200 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:15:46.038  INFO 7200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:15:46.078  INFO 7200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:15:46.463  INFO 7200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:15:46.468  INFO 7200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:15:46.469  INFO 7200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:15:46.558  INFO 7200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:15:46.558  INFO 7200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1017 ms
+2022-06-07 08:15:46.609  WARN 7200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:15:46.664  INFO 7200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:15:46.692  INFO 7200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:15:46.779  INFO 7200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:15:46.840  INFO 7200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:15:46.934  INFO 7200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:15:46.943  INFO 7200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:15:47.319  INFO 7200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:15:47.324  INFO 7200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:15:47.613 DEBUG 7200 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:15:47.754 DEBUG 7200 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:15:48.010 DEBUG 7200 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:15:48.022  INFO 7200 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1cfb7450, org.springframework.security.web.context.SecurityContextPersistenceFilter@279ab15e, org.springframework.security.web.header.HeaderWriterFilter@188ae8d2, org.springframework.web.filter.CorsFilter@478c84aa, org.springframework.security.web.authentication.logout.LogoutFilter@5ca8c904, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@2e02cc37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5810772a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2842ef02, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d1deb11, org.springframework.security.web.session.SessionManagementFilter@25c548d1, org.springframework.security.web.access.ExceptionTranslationFilter@7df5549e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@221961af]
+2022-06-07 08:15:48.080 DEBUG 7200 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:15:48.107 DEBUG 7200 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:15:48.215  INFO 7200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:15:48.222  INFO 7200 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 3.062 seconds (JVM running for 3.854)
+2022-06-07 08:15:50.578  INFO 7200 --- [http-nio-3001-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:15:50.579  INFO 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:15:50.579 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:15:50.579 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:15:50.579 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:15:50.580 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@16fb9fdd
+2022-06-07 08:15:50.580 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@28ceb25e
+2022-06-07 08:15:50.580 DEBUG 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:15:50.580  INFO 7200 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:15:50.594 DEBUG 7200 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:17:46.940  INFO 2040 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 2040 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:17:46.943  INFO 2040 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:17:47.474  INFO 2040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:17:47.515  INFO 2040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:17:47.875  INFO 2040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:17:47.880  INFO 2040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:17:47.880  INFO 2040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:17:47.972  INFO 2040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:17:47.973  INFO 2040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 993 ms
+2022-06-07 08:17:48.024  WARN 2040 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:17:48.085  INFO 2040 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:17:48.113  INFO 2040 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:17:48.196  INFO 2040 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:17:48.257  INFO 2040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:17:48.353  INFO 2040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:17:48.362  INFO 2040 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:17:48.746  INFO 2040 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:17:48.752  INFO 2040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:17:49.059 DEBUG 2040 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:17:49.211 DEBUG 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:17:49.283 DEBUG 2040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:17:49.295  INFO 2040 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a7dcfb7, org.springframework.security.web.context.SecurityContextPersistenceFilter@188ae8d2, org.springframework.security.web.header.HeaderWriterFilter@96dfcbb, org.springframework.web.filter.CorsFilter@50b4e7b2, org.springframework.security.web.authentication.logout.LogoutFilter@626766fd, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@1760e688, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@706c062e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ec62141, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50008974, org.springframework.security.web.session.SessionManagementFilter@11174bf, org.springframework.security.web.access.ExceptionTranslationFilter@34b462e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50b624da]
+2022-06-07 08:17:49.341 DEBUG 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:17:49.365 DEBUG 2040 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:17:49.470  INFO 2040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:17:49.478  INFO 2040 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.872 seconds (JVM running for 3.679)
+2022-06-07 08:17:51.178  INFO 2040 --- [http-nio-3001-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:17:51.179  INFO 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:17:51.179 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:17:51.179 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:17:51.179 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:17:51.180 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@51c4992e
+2022-06-07 08:17:51.180 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@31cd0efa
+2022-06-07 08:17:51.180 DEBUG 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:17:51.180  INFO 2040 --- [http-nio-3001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:17:51.195 DEBUG 2040 --- [http-nio-3001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:17:58.844  INFO 292 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 292 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:17:58.847  INFO 292 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:17:59.414  INFO 292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:17:59.456  INFO 292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:17:59.844  INFO 292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:17:59.850  INFO 292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:17:59.850  INFO 292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:17:59.942  INFO 292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:17:59.943  INFO 292 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1051 ms
+2022-06-07 08:17:59.994  WARN 292 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:18:00.049  INFO 292 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:18:00.076  INFO 292 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:18:00.153  INFO 292 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:18:00.208  INFO 292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:18:00.297  INFO 292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:18:00.305  INFO 292 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:18:00.678  INFO 292 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:18:00.683  INFO 292 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:18:00.948 DEBUG 292 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:18:01.085 DEBUG 292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:18:01.165 DEBUG 292 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:18:01.178  INFO 292 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6baee63b, org.springframework.security.web.context.SecurityContextPersistenceFilter@51e0f2eb, org.springframework.security.web.header.HeaderWriterFilter@6b92a0d1, org.springframework.web.filter.CorsFilter@1002b06d, org.springframework.security.web.authentication.logout.LogoutFilter@6978a32a, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@6e355249, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31a4db4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7341baa3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@234bfc8c, org.springframework.security.web.session.SessionManagementFilter@3ccefe1b, org.springframework.security.web.access.ExceptionTranslationFilter@706c062e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ef220e4]
+2022-06-07 08:18:01.227 DEBUG 292 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:18:01.253 DEBUG 292 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:18:01.367  INFO 292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:18:01.375  INFO 292 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.862 seconds (JVM running for 3.586)
+2022-06-07 08:18:02.648  INFO 292 --- [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:18:02.649  INFO 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:18:02.649 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:18:02.649 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:18:02.649 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:18:02.650 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2a9565d7
+2022-06-07 08:18:02.650 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@758ebec4
+2022-06-07 08:18:02.650 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:18:02.650  INFO 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:18:02.664 DEBUG 292 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:18:02.793  INFO 292 --- [http-nio-3001-exec-1] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: YchPD92nAMjPZ6bt
+[PATH]: /api/app/v1/user/list
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzM0LCJleHAiOjE2NTQ1ODUwNjR9.K_Hp7u-cNo0NWx3x9FqLyC4r4J6jdlRaUm1M4u8TKYfqztUO-SuP0819OKis4ddGfG9Ld2fvSqlVGCHEgZQ_Sw
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : fc6a99fd-4d22-47d3-9b86-4a2075a9f76e
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:18:02.795 DEBUG 292 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/list]
+2022-06-07 08:18:02.797 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/list", parameters={}
+2022-06-07 08:18:02.797 DEBUG 292 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:18:02.900 DEBUG 292 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:18:02.912  INFO 292 --- [http-nio-3001-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:YchPD92nAMjPZ6bt
+
+{"at":"07/06/2022 08:18:02","request_id":"YchPD92nAMjPZ6bt","error":{"code":0,"message":"Thành công"},"data":{"total":1,"data":[{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai"}]}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:18:02.927 DEBUG 292 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:18:02, request_id=YchPD92nAMjPZ6bt, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:18:02.943 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 99
+2022-06-07 08:18:02.945 DEBUG 292 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/list]
+2022-06-07 08:18:02.946 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-06-07 08:18:02.959 DEBUG 292 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-06-07 08:18:02.964 DEBUG 292 --- [http-nio-3001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:18:02.967  INFO 292 --- [http-nio-3001-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:YchPD92nAMjPZ6bt
+
+{"timestamp":"Jun 7, 2022, 8:18:02 AM","status":99,"error":"Http Status 99","path":"/api/app/v1/user/list"}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:18:02.967 DEBUG 292 --- [http-nio-3001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 07 08:18:02 ICT 2022, status=99, error=Http Status 99, path=/api/app/v1/user/list (truncated)...]
+2022-06-07 08:18:02.973 DEBUG 292 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-06-07 08:19:54.786  INFO 12468 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 12468 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:19:54.791  INFO 12468 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:19:55.300  INFO 12468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:19:55.339  INFO 12468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:19:55.702  INFO 12468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:19:55.708  INFO 12468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:19:55.708  INFO 12468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:19:55.800  INFO 12468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:19:55.801  INFO 12468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 973 ms
+2022-06-07 08:19:55.851  WARN 12468 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:19:55.906  INFO 12468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:19:55.933  INFO 12468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:19:56.014  INFO 12468 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:19:56.072  INFO 12468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:19:56.161  INFO 12468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:19:56.169  INFO 12468 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:19:56.524  INFO 12468 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:19:56.530  INFO 12468 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:19:56.795 DEBUG 12468 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:19:56.935 DEBUG 12468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:19:57.006 DEBUG 12468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:19:57.019  INFO 12468 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d90d91f, org.springframework.security.web.context.SecurityContextPersistenceFilter@71f4aeb6, org.springframework.security.web.header.HeaderWriterFilter@4f9980e1, org.springframework.web.filter.CorsFilter@c478e4e, org.springframework.security.web.authentication.logout.LogoutFilter@4b9ed99d, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@bea283b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74844216, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e592ef2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e2b37cd, org.springframework.security.web.session.SessionManagementFilter@19677add, org.springframework.security.web.access.ExceptionTranslationFilter@4bab804f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36931450]
+2022-06-07 08:19:57.065 DEBUG 12468 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:19:57.089 DEBUG 12468 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:19:57.200  INFO 12468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:19:57.207  INFO 12468 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.781 seconds (JVM running for 3.666)
+2022-06-07 08:19:58.345  INFO 12468 --- [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:19:58.346  INFO 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:19:58.347 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:19:58.347 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:19:58.347 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:19:58.348 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7352418c
+2022-06-07 08:19:58.348 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6ed7c178
+2022-06-07 08:19:58.348 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:19:58.348  INFO 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:19:58.362 DEBUG 12468 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:19:58.498  INFO 12468 --- [http-nio-3001-exec-2] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: nNeIz0xZSE4FcVJM
+[PATH]: /api/app/v1/user/list
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzM0LCJleHAiOjE2NTQ1ODUwNjR9.K_Hp7u-cNo0NWx3x9FqLyC4r4J6jdlRaUm1M4u8TKYfqztUO-SuP0819OKis4ddGfG9Ld2fvSqlVGCHEgZQ_Sw
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : f5c86e02-5917-458e-811d-7b8cca078beb
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:19:58.500 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/list]
+2022-06-07 08:19:58.501 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/list", parameters={}
+2022-06-07 08:19:58.502 DEBUG 12468 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:19:58.615 DEBUG 12468 --- [http-nio-3001-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:19:58.627  INFO 12468 --- [http-nio-3001-exec-2] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:nNeIz0xZSE4FcVJM
+
+{"at":"07/06/2022 08:19:58","request_id":"nNeIz0xZSE4FcVJM","error":{"code":0,"message":"Thành công"},"data":{"total":1,"data":[{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai"}]}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:19:58.639 DEBUG 12468 --- [http-nio-3001-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:19:58, request_id=nNeIz0xZSE4FcVJM, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:19:58.653 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 99
+2022-06-07 08:19:58.654 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/list]
+2022-06-07 08:19:58.656 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-06-07 08:19:58.657 DEBUG 12468 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-06-07 08:19:58.663 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:19:58.665  INFO 12468 --- [http-nio-3001-exec-2] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:nNeIz0xZSE4FcVJM
+
+{"timestamp":"Jun 7, 2022, 8:19:58 AM","status":99,"error":"Http Status 99","path":"/api/app/v1/user/list"}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:19:58.665 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 07 08:19:58 ICT 2022, status=99, error=Http Status 99, path=/api/app/v1/user/list (truncated)...]
+2022-06-07 08:19:58.671 DEBUG 12468 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-06-07 08:32:10.650  INFO 9152 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 9152 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:32:10.653  INFO 9152 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:32:11.472  INFO 9152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:32:11.519  INFO 9152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:32:11.947  INFO 9152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:32:11.954  INFO 9152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:32:11.954  INFO 9152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:32:12.050  INFO 9152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:32:12.050  INFO 9152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1343 ms
+2022-06-07 08:32:12.096  WARN 9152 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:32:12.159  INFO 9152 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:32:12.198  INFO 9152 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:32:12.300  INFO 9152 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:32:12.361  INFO 9152 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:32:12.458  INFO 9152 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:32:12.468  INFO 9152 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:32:12.870  INFO 9152 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:32:12.874  INFO 9152 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:32:13.147 DEBUG 9152 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:32:13.292 DEBUG 9152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:32:13.366 DEBUG 9152 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:32:13.379  INFO 9152 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55202ba6, org.springframework.security.web.context.SecurityContextPersistenceFilter@51e0f2eb, org.springframework.security.web.header.HeaderWriterFilter@6b92a0d1, org.springframework.web.filter.CorsFilter@2ef1fc8a, org.springframework.security.web.authentication.logout.LogoutFilter@6978a32a, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@6e355249, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31a4db4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7341baa3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38874eb5, org.springframework.security.web.session.SessionManagementFilter@3ccefe1b, org.springframework.security.web.access.ExceptionTranslationFilter@706c062e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25c16cf7]
+2022-06-07 08:32:13.432 DEBUG 9152 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:32:13.460 DEBUG 9152 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:32:13.577  INFO 9152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:32:13.584  INFO 9152 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 3.242 seconds (JVM running for 4.013)
+2022-06-07 08:32:20.765  INFO 9152 --- [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:32:20.767  INFO 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:32:20.767 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:32:20.767 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:32:20.767 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:32:20.768 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6773bab2
+2022-06-07 08:32:20.768 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@27bf574b
+2022-06-07 08:32:20.768 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:32:20.768  INFO 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:32:20.781 DEBUG 9152 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:32:20.916  INFO 9152 --- [http-nio-3001-exec-1] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: fZTm3tjPQP6AI2OK
+[PATH]: /api/app/v1/user/list
+[QUERIES]: null
+[HEADERS]: 
+---authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjU0NTY0MzM0LCJleHAiOjE2NTQ1ODUwNjR9.K_Hp7u-cNo0NWx3x9FqLyC4r4J6jdlRaUm1M4u8TKYfqztUO-SuP0819OKis4ddGfG9Ld2fvSqlVGCHEgZQ_Sw
+---content-type : application/json
+---user-agent : PostmanRuntime/7.29.0
+---accept : */*
+---postman-token : ac727892-7f49-4546-bcdd-527000429076
+---host : localhost:3001
+---accept-encoding : gzip, deflate, br
+---connection : keep-alive
+---content-length : 25
+-----------------------------------LOGGING REQUEST
+
+2022-06-07 08:32:20.917 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/app/v1/user/list]
+2022-06-07 08:32:20.918 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/app/v1/user/list", parameters={}
+2022-06-07 08:32:20.919 DEBUG 9152 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:32:21.022 DEBUG 9152 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:32:21.034  INFO 9152 --- [http-nio-3001-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:fZTm3tjPQP6AI2OK
+
+{"at":"07/06/2022 08:32:20","request_id":"fZTm3tjPQP6AI2OK","error":{"code":0,"message":"Thành công"},"data":{"total":1,"data":[{"id":1,"userName":"manhtai831","password":"19022001","name":"Manh Tai"}]}}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:32:21.047 DEBUG 9152 --- [http-nio-3001-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=07/06/2022 08:32:20, request_id=fZTm3tjPQP6AI2OK, error=Error(code=0, message=Thành  (truncated)...]
+2022-06-07 08:32:21.064 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 99
+2022-06-07 08:32:21.065 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/app/v1/user/list]
+2022-06-07 08:32:21.068 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-06-07 08:32:21.070 DEBUG 9152 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-06-07 08:32:21.078 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-06-07 08:32:21.080  INFO 9152 --- [http-nio-3001-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:fZTm3tjPQP6AI2OK
+
+{"timestamp":"Jun 7, 2022, 8:32:21 AM","status":99,"error":"Http Status 99","path":"/api/app/v1/user/list"}
+
+<===============||===== LOGGING RESPONSE
+2022-06-07 08:32:21.080 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 07 08:32:21 ICT 2022, status=99, error=Http Status 99, path=/api/app/v1/user/list (truncated)...]
+2022-06-07 08:32:21.088 DEBUG 9152 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-06-07 08:32:58.129  INFO 14956 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 14956 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:32:58.130  INFO 14956 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:32:58.641  INFO 14956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:32:58.682  INFO 14956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:32:59.048  INFO 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:32:59.054  INFO 14956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:32:59.054  INFO 14956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:32:59.146  INFO 14956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:32:59.146  INFO 14956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 975 ms
+2022-06-07 08:32:59.197  WARN 14956 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:32:59.252  INFO 14956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:32:59.279  INFO 14956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:32:59.358  INFO 14956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:32:59.413  INFO 14956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:32:59.506  INFO 14956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:32:59.514  INFO 14956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:32:59.897  INFO 14956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:32:59.902  INFO 14956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:33:00.198 DEBUG 14956 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:33:00.340 DEBUG 14956 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:33:00.420 DEBUG 14956 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:33:00.433  INFO 14956 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d5d77a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@188ae8d2, org.springframework.security.web.header.HeaderWriterFilter@96dfcbb, org.springframework.web.filter.CorsFilter@71b7e9c8, org.springframework.security.web.authentication.logout.LogoutFilter@626766fd, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@1760e688, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@706c062e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ec62141, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55202ba6, org.springframework.security.web.session.SessionManagementFilter@11174bf, org.springframework.security.web.access.ExceptionTranslationFilter@34b462e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a0ee80]
+2022-06-07 08:33:00.489 DEBUG 14956 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:33:00.516 DEBUG 14956 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:33:00.633  INFO 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:33:00.640  INFO 14956 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.807 seconds (JVM running for 3.589)
+2022-06-07 08:33:03.640  INFO 14956 --- [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:33:03.640  INFO 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:33:03.641 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:33:03.641 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:33:03.641 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:33:03.642 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@10728fe8
+2022-06-07 08:33:03.642 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@570b85dd
+2022-06-07 08:33:03.642 DEBUG 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:33:03.642  INFO 14956 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-07 08:33:03.658 DEBUG 14956 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:34:02.229  INFO 7004 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 7004 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:34:02.232  INFO 7004 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:34:02.739  INFO 7004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:34:02.781  INFO 7004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:34:03.155  INFO 7004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:34:03.161  INFO 7004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:34:03.161  INFO 7004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:34:03.251  INFO 7004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:34:03.251  INFO 7004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 985 ms
+2022-06-07 08:34:03.303  WARN 7004 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:34:03.359  INFO 7004 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:34:03.386  INFO 7004 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:34:03.464  INFO 7004 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:34:03.522  INFO 7004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:34:03.614  INFO 7004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:34:03.622  INFO 7004 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:34:03.997  INFO 7004 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:34:04.002  INFO 7004 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:34:04.293 DEBUG 7004 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:34:04.450 DEBUG 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:34:04.525 DEBUG 7004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:34:04.538  INFO 7004 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2634d000, org.springframework.security.web.context.SecurityContextPersistenceFilter@52e92f6, org.springframework.security.web.header.HeaderWriterFilter@5b0575d0, org.springframework.web.filter.CorsFilter@1642968c, org.springframework.security.web.authentication.logout.LogoutFilter@7e63374b, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@5c60f096, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e0e0ba7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@706c062e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a7dcfb7, org.springframework.security.web.session.SessionManagementFilter@77ebc9e6, org.springframework.security.web.access.ExceptionTranslationFilter@b548f51, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ba08f26]
+2022-06-07 08:34:04.586 DEBUG 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:34:04.611 DEBUG 7004 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:34:04.727  INFO 7004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:34:04.735  INFO 7004 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 2.8 seconds (JVM running for 3.458)
+2022-06-07 08:34:06.382  INFO 7004 --- [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:34:06.383  INFO 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:34:06.383 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:34:06.383 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:34:06.383 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:34:06.384 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3713bedc
+2022-06-07 08:34:06.384 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@41d53813
+2022-06-07 08:34:06.385 DEBUG 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:34:06.385  INFO 7004 --- [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-07 08:34:06.401 DEBUG 7004 --- [http-nio-3001-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:34:37.448  INFO 15848 --- [main] c.e.s.SpringDemoAppApplication           : Starting SpringDemoAppApplication using Java 11.0.12 on MANHTAI-PC with PID 15848 (I:\SpringBoot\spring_demo_app\target\classes started by xhd89 in I:\SpringBoot\spring_demo_app)
+2022-06-07 08:34:37.453  INFO 15848 --- [main] c.e.s.SpringDemoAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-06-07 08:34:38.037  INFO 15848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-07 08:34:38.091  INFO 15848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
+2022-06-07 08:34:38.497  INFO 15848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3001 (http)
+2022-06-07 08:34:38.503  INFO 15848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-07 08:34:38.503  INFO 15848 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-07 08:34:38.616  INFO 15848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-07 08:34:38.617  INFO 15848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1127 ms
+2022-06-07 08:34:38.674  WARN 15848 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 08:34:38.736  INFO 15848 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 08:34:38.765  INFO 15848 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-07 08:34:38.852  INFO 15848 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 08:34:38.915  INFO 15848 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-07 08:34:39.016  INFO 15848 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-07 08:34:39.026  INFO 15848 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-07 08:34:39.423  INFO 15848 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 08:34:39.430  INFO 15848 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:34:39.731 DEBUG 15848 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-06-07 08:35:20.904 DEBUG 15848 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2022-06-07 08:35:22.995 DEBUG 15848 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-06-07 08:35:23.335  INFO 15848 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bfdaed7, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d3a28b5, org.springframework.security.web.header.HeaderWriterFilter@5e9f1a4c, org.springframework.web.filter.CorsFilter@272c5abd, org.springframework.security.web.authentication.logout.LogoutFilter@54d46c8, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@2cc97e47, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38a52072, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17fb5184, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60c8909a, org.springframework.security.web.session.SessionManagementFilter@6108fd23, org.springframework.security.web.access.ExceptionTranslationFilter@79c849c7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44a98a23]
+2022-06-07 08:35:27.237 DEBUG 15848 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-06-07 08:35:27.264 DEBUG 15848 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-06-07 08:35:27.386  INFO 15848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3001 (http) with context path ''
+2022-06-07 08:35:27.394  INFO 15848 --- [main] c.e.s.SpringDemoAppApplication           : Started SpringDemoAppApplication in 50.227 seconds (JVM running for 51.659)
+2022-06-07 08:35:33.328  INFO 15848 --- [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 08:35:33.329  INFO 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-07 08:35:33.330 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-06-07 08:35:33.330 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-06-07 08:35:33.330 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-06-07 08:35:33.330 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4d93e5bf
+2022-06-07 08:35:33.331 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2484c868
+2022-06-07 08:35:33.331 DEBUG 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-06-07 08:35:33.331  INFO 15848 --- [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-07 08:35:33.346 DEBUG 15848 --- [http-nio-3001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.data.controller.UserController#getAllUser()
+2022-06-07 08:36:51.074  WARN 15848 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s100ms894µs400ns).
+2022-06-07 08:36:51.299  INFO 15848 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 08:36:51.301  INFO 15848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-07 08:36:51.310  INFO 15848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

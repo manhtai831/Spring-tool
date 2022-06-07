@@ -25,5 +25,6 @@ public class UserModel {
 
     private String createAt;
     private String updateAt;
+    private String token;
 
 }
