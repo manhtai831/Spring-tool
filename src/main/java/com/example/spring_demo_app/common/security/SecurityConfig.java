@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/api/app/v1/user/login","/api/app/v1/user/register").permitAll()
+                .antMatchers("/api/app/v1/user/login","/api/app/v1/user/register","/ping").permitAll()
                 .anyRequest().authenticated().and()
                 .cors().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
