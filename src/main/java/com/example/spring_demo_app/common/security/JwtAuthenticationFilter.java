@@ -1,11 +1,12 @@
 package com.example.spring_demo_app.common.security;
 
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
+import com.example.spring_demo_app.data.model.UserModel;
 import com.example.spring_demo_app.domain.service.impl.JwtServiceImpl;
 import com.example.spring_demo_app.domain.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -17,23 +18,14 @@ import java.util.Optional;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
+    @Autowired
     private JwtServiceImpl jwtService;
 
+    @Autowired
     private UserServiceImpl userService;
 
 
-    @Autowired
-    public void setJwtService(JwtServiceImpl jwtService) {
-        this.jwtService = jwtService;
-    }
-
-    @Autowired
-    public void setUserService(UserServiceImpl userService) {
-        this.userService = userService;
-    }
-
-
-    private String getJwtFromRequest(HttpServletRequest request) {
+    private String getJwtFromRequest(HttpServletRequest request) throws AppAuthenticationException {
         String authHeader = request.getHeader("Authorization");
 
         if (authHeader == null) return null;
@@ -52,22 +44,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         try {
             String jwt = getJwtFromRequest(request);
-            if (jwt != null) {
+            if (jwtService.validateJwtToken(jwt)) {
                 Long id = jwtService.getIdFromJwtToken(jwt);
-                System.out.println("AAAAAAAAAA   " + id);
-                Optional<UserPrinciple> userDetails = userService.getUserById(id);
-                System.out.println(userDetails);
 
-//                if (!userDetails.isEmpty()){
-//                    response.sendError(99,"Khoong theer authen");
-//                    filterChain.doFilter(request, response);
-//                    return;
-//                }
+                UserModel userDetails = userService.getUserById(id);
 
-                var authentication = new UsernamePasswordAuthenticationToken(userDetails.get(), null, userDetails.get().getAuthorities());
+                var authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
+                SecurityContextHolder.getContext().setAuthentication(authentication);
             }
 
         } catch (Exception e) {

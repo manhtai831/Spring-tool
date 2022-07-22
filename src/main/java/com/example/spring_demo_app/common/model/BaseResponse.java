@@ -2,6 +2,7 @@ package com.example.spring_demo_app.common.model;
 
 import com.example.spring_demo_app.common.date_time.DateTimeUtils;
 import com.example.spring_demo_app.common.logging.CustomURLFilter;
+import com.example.spring_demo_app.common.utils.RandomString;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,7 +41,9 @@ public class BaseResponse {
     private static String getRequestId() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = attr.getRequest();
-        return String.valueOf(request.getAttribute(CustomURLFilter.REQUEST_ID)) ;
+        Object id = request.getAttribute(CustomURLFilter.REQUEST_ID);
+        if(id == null) id = new RandomString(16).nextString();
+        return String.valueOf(id);
 
     }
 }

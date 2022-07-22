@@ -1,23 +1,22 @@
 package com.example.spring_demo_app.domain.service.impl;
 
-import com.example.spring_demo_app.common.security.UserPrinciple;
+import com.example.spring_demo_app.common.exception.AppAuthenticationException;
+import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
 import com.example.spring_demo_app.domain.entity.UserEntity;
 import com.example.spring_demo_app.domain.service.UserService;
 import com.example.spring_demo_app.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService, UserDetailsService {
+public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
     private final ModelMapper mapper;
@@ -29,17 +28,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public List<UserModel> getAllUser() {
+    public Page<UserModel> getAllUser(Integer index, Integer size) {
+        Pageable pageable = PageRequest.of(index, size);
+        Page<UserEntity> entities = repository.findAll(pageable);
 
-        List<UserEntity> entities = repository.findAll();
-
-        return entities.stream().map(e -> mapper.map(e, UserModel.class)).collect(Collectors.toList());
+        return entities.map(userEntity -> mapper.map(userEntity, UserModel.class));
     }
 
     @Override
-    public UserModel login(String userName, String password) {
-        UserEntity entity = repository.findUserEntitiesByUserNameAndPassword(userName, password);
-        return mapper.map(entity, UserModel.class);
+    public UserModel login(String userName, String password) throws LoginException {
+        Optional<UserEntity> entity = repository.findUserEntitiesByUsernameAndPassword(userName, password);
+        if (entity.isEmpty()) throw new LoginException("Sai tài khoản hoặc mật khẩu");
+        return mapper.map(entity.get(), UserModel.class);
     }
 
     @Override
@@ -48,23 +48,21 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Optional<UserPrinciple> getUserById(Long id) {
+    public UserModel getUserById(Long id) throws AppAuthenticationException {
         Optional<UserEntity> entity = repository.findById(id);
-        System.out.println(entity);
-        if (entity.isEmpty()) return Optional.empty();
+        System.out.println("BBBBBBBBB: " + entity);
+        if (entity.isEmpty()) throw new AppAuthenticationException("FORBIDDEN");
 
-        return Optional.of(mapper.map(entity.get(),UserPrinciple.class));
-    }
-
-
-    @Override
-    public UserModel getUserWithAuthentication() {
-        return null;
+        return mapper.map(entity.get(), UserModel.class);
     }
 
     @Override
-    public UserModel createUser() {
-        return null;
+    public UserModel createUser(UserModel userModel) {
+        UserEntity entity = mapper.map(userModel, UserEntity.class);
+
+        UserEntity response = repository.saveAndFlush(entity);
+
+        return mapper.map(response, UserModel.class);
     }
 
     @Override
@@ -72,9 +70,4 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return null;
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity entity = repository.findUserEntitiesByUserName(username);
-        return mapper.map(entity, UserDetails.class);
-    }
 }

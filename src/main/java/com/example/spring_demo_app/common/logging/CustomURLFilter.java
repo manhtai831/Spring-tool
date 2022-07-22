@@ -33,6 +33,7 @@ public class CustomURLFilter implements Filter {
 
     }
 
+
     private void logRequest(HttpServletRequest request, String requestId) {
         if (request != null) {
             StringBuilder data = new StringBuilder();

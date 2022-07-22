@@ -5,7 +5,7 @@ public class NotFoundException extends Exception{
         super(message);
     }
 
-    static NotFoundException message(String msg){
+    public static NotFoundException message(String msg){
         return  new NotFoundException(msg);
     }
 }
