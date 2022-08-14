@@ -22,7 +22,7 @@ public class AppSchedule {
         this.client = client;
     }
 
-//    @Scheduled(cron = "0 0/30 6 * * *")
+//    @Scheduled(cron = "0 0/30 6 * * *",zone = "GMT+7:00")
 //    public void getCoinDaily() throws IOException {
 //        String json = "{\n" +
 //                "    \"phone\": \"84943574556\",\n" +
@@ -67,12 +67,12 @@ public class AppSchedule {
 //
 //    }
 
-    @Scheduled(cron = "* * */3 * * *")
+    @Scheduled(cron = "0 0 0/1 * * *",zone = "GMT+7:00")
     public void pingToServer() throws IOException {
 
         Request request = new Request.Builder().url("https://shopee-tool.herokuapp.com/ping").build();
         Response response = client.newCall(request).execute();
 
-        System.out.println(new Date() + "was pinged.\nhttps://shopee-tool.herokuapp.com/ping\n" + response.body().string());
+        System.out.println(new Date() + " was pinged.\nhttps://shopee-tool.herokuapp.com/ping\n" + response.body().string());
     }
 }
