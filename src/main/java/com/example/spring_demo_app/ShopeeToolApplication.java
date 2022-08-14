@@ -10,6 +10,7 @@ public class ShopeeToolApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ShopeeToolApplication.class, args);
+
     }
 
 }
