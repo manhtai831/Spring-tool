@@ -1,6 +1,6 @@
-package com.example.spring_demo_app.domain.service.impl;
+package com.example.spring_demo_app.domain.service;
 
-import com.example.spring_demo_app.domain.service.JwtService;
+import com.example.spring_demo_app.data.services.JwtService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;

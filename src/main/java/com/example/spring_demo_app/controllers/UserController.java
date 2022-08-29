@@ -1,11 +1,11 @@
-package com.example.spring_demo_app.data.controller;
+package com.example.spring_demo_app.controllers;
 
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.common.model.ResponseList;
 import com.example.spring_demo_app.data.model.UserModel;
-import com.example.spring_demo_app.domain.service.impl.JwtServiceImpl;
-import com.example.spring_demo_app.domain.service.impl.UserServiceImpl;
+import com.example.spring_demo_app.domain.service.JwtServiceImpl;
+import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.security.authentication.AuthenticationManager;

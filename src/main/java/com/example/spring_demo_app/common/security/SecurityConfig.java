@@ -1,6 +1,6 @@
 package com.example.spring_demo_app.common.security;
 
-import com.example.spring_demo_app.domain.service.impl.UserServiceImpl;
+import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/api/app/v1/user/login","/api/app/v1/user/register","/ping").permitAll()
+                .antMatchers("/api/app/v1/user/login","/api/app/v1/user/register","/ping","/api/v1/account/*","/api/v1/mkt/*").permitAll()
                 .anyRequest().authenticated().and()
                 .cors().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()

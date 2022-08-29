@@ -2,8 +2,8 @@ package com.example.spring_demo_app.common.security;
 
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.data.model.UserModel;
-import com.example.spring_demo_app.domain.service.impl.JwtServiceImpl;
-import com.example.spring_demo_app.domain.service.impl.UserServiceImpl;
+import com.example.spring_demo_app.domain.service.JwtServiceImpl;
+import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,7 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Optional;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 

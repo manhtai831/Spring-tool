@@ -1,19 +1,18 @@
-package com.example.spring_demo_app.domain.service;
+package com.example.spring_demo_app.data.services;
 
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
+import okhttp3.Response;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-import java.util.Optional;
+import java.io.IOException;
 
 public interface UserService {
 
     Page<UserModel> getAllUser(Integer index, Integer size);
 
-    UserModel login(String userName,String password) throws LoginException;
+    UserModel login(String userName, String password) throws LoginException;
 
     UserModel getUserInfo();
 
@@ -22,5 +21,7 @@ public interface UserService {
     UserModel createUser(UserModel userModel);
 
     UserModel updateUser();
+
+    Response login(String json) throws IOException;
 
 }

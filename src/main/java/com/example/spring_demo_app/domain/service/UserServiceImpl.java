@@ -1,11 +1,12 @@
-package com.example.spring_demo_app.domain.service.impl;
+package com.example.spring_demo_app.domain.service;
 
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
+import com.example.spring_demo_app.data.services.UserService;
 import com.example.spring_demo_app.domain.entity.UserEntity;
-import com.example.spring_demo_app.domain.service.UserService;
 import com.example.spring_demo_app.repository.UserRepository;
+import okhttp3.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,18 +14,25 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.Optional;
+
+import static com.example.spring_demo_app.common.HeaderStored.MEDIA_TYPE;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
     private final ModelMapper mapper;
+    private final OkHttpClient client;
+
+
 
     @Autowired
-    public UserServiceImpl(UserRepository repository, ModelMapper mapper) {
+    public UserServiceImpl(UserRepository repository, ModelMapper mapper, OkHttpClient client) {
         this.repository = repository;
         this.mapper = mapper;
+        this.client = client;
     }
 
     @Override
@@ -68,6 +76,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserModel updateUser() {
         return null;
+    }
+
+    @Override
+    public Response login(String json) throws IOException {
+        RequestBody body = RequestBody.create(json, MEDIA_TYPE);
+
+        Request request = new Request.Builder().url("https://shopee.vn/api/v4/account/login_by_password").post(body).build();
+
+        return client.newCall(request).execute();
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.spring_demo_app.data.controller;
+package com.example.spring_demo_app.controllers;
 
 import com.example.spring_demo_app.common.model.BaseResponse;
 import org.springframework.web.bind.annotation.GetMapping;

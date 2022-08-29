@@ -1,14 +1,12 @@
 package com.example.spring_demo_app.common.security;
 
 import com.example.spring_demo_app.data.model.UserModel;
-import com.example.spring_demo_app.domain.service.impl.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
 
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
