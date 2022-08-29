@@ -67,7 +67,7 @@ public class AppSchedule {
 
     }
 
-    @Scheduled(cron = "0 0/15 0 * * *",zone = "GMT+7:00")
+    @Scheduled(cron = "0 0/5 * * * *",zone = "GMT+7:00")
     public void pingToServer() throws IOException {
 
         Request request = new Request.Builder().url("https://shopee-tool.herokuapp.com/ping").build();
