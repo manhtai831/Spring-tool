@@ -51,7 +51,7 @@ public class LuckyServiceImpl implements LuckyService {
 
         GroupStored.getInstance().setLuckyThemeModel(themeModel);
         gateModel.setData(themeModel);
-
+        System.out.println("-------------getLuckyInfo________________" + gateModel);
 
         return gateModel;
     }
@@ -74,7 +74,7 @@ public class LuckyServiceImpl implements LuckyService {
         Response response = client.newCall(requestCoin).execute();
 
         String body = response.body().string();
-
+        System.out.println("-------------pickLuckyNumber________________" + body);
         return GsonParserUtils.parseStringToObject(body, GateModel.class);
 
     }
