@@ -55,16 +55,23 @@ public class AppSchedule {
         System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
     }
 
-    @Scheduled(cron = "0 45 16 * * *", zone = "GMT+7:00")
+    @Scheduled(cron = "0 0 17 * * *", zone = "GMT+7:00")
     public void luckyNumberTmp() throws IOException {
+        System.out.println("LOGINNNNNNNNNNNNNNNNN");
         accountController.shopeeLogin();
+        System.out.println("REMOVE HEADER ORIGINNNNNNNNNNN");
         HeaderStored.getInstance().removeHeader("origin");
-
+        System.out.println("luckyController.getLuckyInfo();");
         luckyController.getLuckyInfo();
+        System.out.println("luckyController.pickLuckyNumber();");
         luckyController.pickLuckyNumber();
+        System.out.println("luckyController.createLuckyGroup();");
         luckyController.createLuckyGroup();
+        System.out.println("luckyController.createLinkLuckyGroup();");
         luckyController.createLinkLuckyGroup("");
+        System.out.println("luckyController.getGroupInfoByRel();");
         luckyController.getGroupInfoByRel("");
+        System.out.println("luckyController.joinGroup();");
         luckyController.joinGroup("");
 
         System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");

@@ -41,8 +41,8 @@ public class AccountController {
 
         if (gateModel.getError() != 0)
             return BaseResponse.error(Error.custom(1, "Đăng nhập hệ thống shopee không thành công"));
-
-        AccountModel account = GsonParserUtils.parseStringToObject(gateModel.getData().toString(), AccountModel.class);
+        String s = GsonParserUtils.parseObjectToString(gateModel.getData());
+        AccountModel account = GsonParserUtils.parseStringToObject(s, AccountModel.class);
 
         assert account != null;
 
