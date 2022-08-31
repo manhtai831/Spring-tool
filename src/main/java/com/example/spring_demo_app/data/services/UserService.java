@@ -22,6 +22,4 @@ public interface UserService {
 
     UserModel updateUser();
 
-    Response login(String json) throws IOException;
-
 }

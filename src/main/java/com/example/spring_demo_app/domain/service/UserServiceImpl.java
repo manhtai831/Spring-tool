@@ -1,12 +1,16 @@
 package com.example.spring_demo_app.domain.service;
 
+import com.example.spring_demo_app.common.contants.ShopeeConstants;
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
 import com.example.spring_demo_app.data.services.UserService;
 import com.example.spring_demo_app.domain.entity.UserEntity;
 import com.example.spring_demo_app.repository.UserRepository;
-import okhttp3.*;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,7 +28,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
     private final ModelMapper mapper;
-    private final OkHttpClient client;
 
 
 
@@ -32,7 +35,6 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository repository, ModelMapper mapper, OkHttpClient client) {
         this.repository = repository;
         this.mapper = mapper;
-        this.client = client;
     }
 
     @Override
@@ -78,13 +80,6 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    @Override
-    public Response login(String json) throws IOException {
-        RequestBody body = RequestBody.create(json, MEDIA_TYPE);
 
-        Request request = new Request.Builder().url("https://shopee.vn/api/v4/account/login_by_password").post(body).build();
-
-        return client.newCall(request).execute();
-    }
 
 }

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HeaderStored {
-    static  HeaderStored headerStored;
+    static HeaderStored headerStored;
     public Map<String, String> headers = new HashMap<>();
 
     public static final MediaType MEDIA_TYPE = MediaType.parse("application/json; charset=utf-8");
@@ -17,13 +17,13 @@ public class HeaderStored {
         return headerStored;
     }
 
-    public void setHeader(Response response){
+    public void setHeader(Response response) {
         StringBuilder cookies = new StringBuilder();
         response.headers("set-cookie").forEach(element -> {
             String s = element.split(";")[0];
             cookies.append(s).append("; ");
         });
-        System.out.println(cookies.toString());
+//        System.out.println(cookies.toString());
 
         String cookieAuth = "SPC_F=gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k; csrftoken=aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii";
 
@@ -36,5 +36,21 @@ public class HeaderStored {
         headers.put("x-csrftoken", "aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii");
         headers.put("x-api-source", "pc");
     }
+
+    public void addHeader(String key, String value) {
+
+        headers.put(key, value);
+    }
+
+    public void addHeaders(Map<String, String> headers) {
+
+        headers.putAll(headers);
+    }
+
+    public void clear() {
+
+        headers.clear();
+    }
+
 
 }
