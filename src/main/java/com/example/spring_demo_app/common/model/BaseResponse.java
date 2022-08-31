@@ -43,17 +43,17 @@ public class BaseResponse {
 
 
     private static String getRequestId() {
-        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-        HttpServletRequest request ;
-        if (attr instanceof NativeWebRequest) {
-            request = (HttpServletRequest) ((NativeWebRequest) attr).getNativeRequest();
-        }else{
-            request = attr.getRequest();
-        }
-
-        Object id = request.getAttribute(CustomURLFilter.REQUEST_ID);
-        if(id == null) id = new RandomString(16).nextString();
-        return String.valueOf(id);
+//        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//        HttpServletRequest request ;
+//        if (attr instanceof NativeWebRequest) {
+//            request = (HttpServletRequest) ((NativeWebRequest) attr).getNativeRequest();
+//        }else{
+//            request = attr.getRequest();
+//        }
+//
+//        Object id = request.getAttribute(CustomURLFilter.REQUEST_ID);
+//        if(id == null) id = new RandomString(16).nextString();
+        return String.valueOf("Reuqest id fake");
 
     }
 }

@@ -55,7 +55,7 @@ public class AppSchedule {
         System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
     }
 
-    @Scheduled(cron = "0 0 17 * * *", zone = "GMT+7:00")
+    @Scheduled(cron = "0 10 17 * * *", zone = "GMT+7:00")
     public void luckyNumberTmp() throws IOException {
         System.out.println("LOGINNNNNNNNNNNNNNNNN");
         accountController.shopeeLogin();

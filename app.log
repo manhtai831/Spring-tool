@@ -4068,3 +4068,109 @@ LOGGING REQUEST-----------------------------------
 2022-08-31 16:21:52.067  INFO 9432 --- [cluster-ClusterId{value='630f282be6f4175a4ed38ef2', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000232 from replica set primary shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
 2022-08-31 16:21:52.068  INFO 9432 --- [cluster-ClusterId{value='630f282be6f4175a4ed38ef2', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 8 from replica set primary shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
 2022-08-31 16:21:52.068  INFO 9432 --- [cluster-ClusterId{value='630f282be6f4175a4ed38ef2', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
+2022-08-31 16:30:02.563  INFO 9432 --- [scheduling-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:41245}] to shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
+2022-08-31 16:30:02.677 ERROR 9432 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.IllegalStateException: No thread-bound request found: Are you referring to request attributes outside of an actual web request, or processing a request outside of the originally receiving thread? If you are actually operating within a web request and still receive this message, your code is probably running outside of DispatcherServlet: In this case, use RequestContextListener or RequestContextFilter to expose the current request.
+	at org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes(RequestContextHolder.java:131) ~[spring-web-5.3.19.jar:5.3.19]
+	at com.example.spring_demo_app.common.model.BaseResponse.getRequestId(BaseResponse.java:45) ~[classes/:na]
+	at com.example.spring_demo_app.common.model.BaseResponse.success(BaseResponse.java:25) ~[classes/:na]
+	at com.example.spring_demo_app.controllers.AccountController.shopeeLogin(AccountController.java:60) ~[classes/:na]
+	at com.example.spring_demo_app.gate.AppSchedule.luckyNumberTmp(AppSchedule.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95) ~[spring-context-5.3.19.jar:5.3.19]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-08-31 16:34:25.100  INFO 9432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-31 16:34:25.100  INFO 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-31 16:34:25.100 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-31 16:34:25.100 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-31 16:34:25.100 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-31 16:34:25.101 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@d863bb
+2022-08-31 16:34:25.102 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2e6f1f48
+2022-08-31 16:34:25.102 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2022-08-31 16:34:25.102  INFO 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-31 16:34:25.116 DEBUG 9432 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.AccountController#shopeeLogin()
+2022-08-31 16:34:25.124  INFO 9432 --- [http-nio-8080-exec-1] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: LSUMUC8ED2sWIbZz
+[PATH]: /api/v1/account/login
+[QUERIES]: null
+[HEADERS]: 
+---host : localhost:8080
+---connection : keep-alive
+---cache-control : max-age=0
+---sec-ch-ua : "Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"
+---sec-ch-ua-mobile : ?0
+---sec-ch-ua-platform : "Windows"
+---upgrade-insecure-requests : 1
+---user-agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36
+---accept : text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+---sec-fetch-site : none
+---sec-fetch-mode : navigate
+---sec-fetch-user : ?1
+---sec-fetch-dest : document
+---accept-encoding : gzip, deflate, br
+---accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
+-----------------------------------LOGGING REQUEST
+
+2022-08-31 16:34:25.125 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/v1/account/login]
+2022-08-31 16:34:25.127 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/account/login", parameters={}
+2022-08-31 16:34:25.127 DEBUG 9432 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.AccountController#shopeeLogin()
+2022-08-31 16:34:25.772 DEBUG 9432 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-31 16:34:25.775  INFO 9432 --- [http-nio-8080-exec-1] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:LSUMUC8ED2sWIbZz
+
+{"at":"31/08/2022 16:34:25","request_id":"LSUMUC8ED2sWIbZz","error":{"code":0,"message":"Thành công"},"data":"{referer\u003dhttps://shopee.vn/buyer/login?next\u003dhttps://shopee.vn/, x-api-source\u003dpc, cookie\u003dSPC_R_T_ID\u003dyqe8DINHA4F1L4+Y/590e3M83H01ICX1AkmEGHHUfvFSJnoc1X7FeGJzEReIeBqlXdOQn/UJOsyulYz1B/XvNrC8ZV1wDQ7Eag6Wvy2mAOyaN1Hvf7pKW8KaUDJWpAspv7TyrdGX9vRmV8DSagoD2YQcAuAqLz8Qie2JjI4rgJE\u003d; SPC_SI\u003dNfwFYwAAAAB4Z3pveGRtbEDljQAAAAAASk9ka1Nmalk\u003d; REC_T_ID\u003d1a8352b5-2910-11ed-881f-2cea7fa892c5; SPC_R_T_IV\u003dQXJsMThNWng1M3hIVllUYQ\u003d\u003d; SPC_T_ID\u003dyqe8DINHA4F1L4+Y/590e3M83H01ICX1AkmEGHHUfvFSJnoc1X7FeGJzEReIeBqlXdOQn/UJOsyulYz1B/XvNrC8ZV1wDQ7Eag6Wvy2mAOyaN1Hvf7pKW8KaUDJWpAspv7TyrdGX9vRmV8DSagoD2YQcAuAqLz8Qie2JjI4rgJE\u003d; SPC_T_IV\u003dQXJsMThNWng1M3hIVllUYQ\u003d\u003d; SPC_CLIENTID\u003dZ1kyTjRCT1FpTk9Wvpxlnbwvqpnmncyl; SPC_EC\u003dZm1DaXM2N05KYmNZM2RoMmk9I9+0VPtYrzrLYiSe37YksI2mMuC8UKIRGoq3fiuF1jxNmyczOW4+8HmK8tHrrrAb+QDnLx4lrZdJUj+0OF2sZJt6CoVHIjUFX6JWSoVkCG74oT6m2g0IdslMzvYliHCrH9iO0f/FewTjLzfXemU\u003d; SPC_ST\u003d.RTFkWnoxU0pZbUh5TVI1NegqJEfOBDW5CPFmlX/+QL+GmSEojPXDgDDFhbG8dHHP60MXlVOe76s0tHk4UybFE0ypmX1yFsTPzYdlclappHndRE0QOFVa8P3akp0rdQxNKQgCp3MIWqiYYKXeOEBv+SzYoBzofOQDrvpP3P9OYUdWYALTotazuWFKjwFYVig0jzRC61qwmU0EQ4HhvHpQ1w\u003d\u003d; SPC_F\u003dgY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k; csrftoken\u003daWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii; SPC_U\u003d48688687, x-csrftoken\u003daWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii, origin\u003dhttps://shopee.vn}"}
+
+<===============||===== LOGGING RESPONSE
+2022-08-31 16:34:25.783 DEBUG 9432 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=31/08/2022 16:34:25, request_id=LSUMUC8ED2sWIbZz, error=Error(code=0, message=Thành  (truncated)...]
+2022-08-31 16:34:25.797 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-31 16:34:25.798 DEBUG 9432 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/v1/account/login]
+2022-08-31 16:34:25.827 DEBUG 9432 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
+2022-08-31 16:34:25.828  INFO 9432 --- [http-nio-8080-exec-2] c.e.s.common.logging.CustomURLFilter     : 
+LOGGING REQUEST-----------------------------------
+[REQUEST-ID]: kTKH5sz21ZM5lkTs
+[PATH]: /favicon.ico
+[QUERIES]: null
+[HEADERS]: 
+---host : localhost:8080
+---connection : keep-alive
+---sec-ch-ua : "Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"
+---sec-ch-ua-mobile : ?0
+---user-agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36
+---sec-ch-ua-platform : "Windows"
+---accept : image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+---sec-fetch-site : same-origin
+---sec-fetch-mode : no-cors
+---sec-fetch-dest : image
+---referer : http://localhost:8080/api/v1/account/login
+---accept-encoding : gzip, deflate, br
+---accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
+-----------------------------------LOGGING REQUEST
+
+2022-08-31 16:34:25.829 DEBUG 9432 --- [http-nio-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /favicon.ico]
+2022-08-31 16:34:25.829 DEBUG 9432 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2022-08-31 16:34:25.829 DEBUG 9432 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
+2022-08-31 16:34:25.835 DEBUG 9432 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-31 16:34:25.836  INFO 9432 --- [http-nio-8080-exec-2] c.e.s.common.logging.LoggingService      : 
+======||==============> LOGGING RESPONSE
+[REQUEST-ID]:kTKH5sz21ZM5lkTs
+
+{"at":"31/08/2022 16:34:25","request_id":"kTKH5sz21ZM5lkTs","error":{"code":99,"message":"Đã có lỗi xảy ra"},"data":"/favicon.ico not found"}
+
+<===============||===== LOGGING RESPONSE
+2022-08-31 16:34:25.837 DEBUG 9432 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=31/08/2022 16:34:25, request_id=kTKH5sz21ZM5lkTs, error=Error(code=99, message=Đã có (truncated)...]
+2022-08-31 16:34:25.847 DEBUG 9432 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-31 16:34:25.847 DEBUG 9432 --- [http-nio-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /favicon.ico]
