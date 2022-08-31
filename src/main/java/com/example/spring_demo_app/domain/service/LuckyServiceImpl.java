@@ -51,7 +51,7 @@ public class LuckyServiceImpl implements LuckyService {
 
         GroupStored.getInstance().setLuckyThemeModel(themeModel);
         gateModel.setData(themeModel);
-        System.out.println("-------------getLuckyInfo________________" + gateModel);
+        System.out.println("-------------getLuckyInfo________________" + themeModel.getSession().getSession_id());
 
         return gateModel;
     }
@@ -62,6 +62,7 @@ public class LuckyServiceImpl implements LuckyService {
         RandomString randomString = new RandomString(GroupStored.getInstance().getLuckyThemeModel().getSession().getNumber_of_digits(), RandomString.digits);
         String json = GsonParserUtils.parseObjectToString(new LuckyThemeModel.Builder()
                 .setNumber(randomString.nextString())
+                .setSessionId(GroupStored.getInstance().getLuckyThemeModel().getSession().getSession_id())
                 .setSource("sogiday")
                 .setThemeType("number_picker_theme")
                 .build());
