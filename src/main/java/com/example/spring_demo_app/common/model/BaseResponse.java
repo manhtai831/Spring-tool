@@ -6,6 +6,7 @@ import com.example.spring_demo_app.common.utils.RandomString;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -43,7 +44,13 @@ public class BaseResponse {
 
     private static String getRequestId() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-        HttpServletRequest request = attr.getRequest();
+        HttpServletRequest request ;
+        if (attr instanceof NativeWebRequest) {
+            request = (HttpServletRequest) ((NativeWebRequest) attr).getNativeRequest();
+        }else{
+            request = attr.getRequest();
+        }
+
         Object id = request.getAttribute(CustomURLFilter.REQUEST_ID);
         if(id == null) id = new RandomString(16).nextString();
         return String.valueOf(id);
