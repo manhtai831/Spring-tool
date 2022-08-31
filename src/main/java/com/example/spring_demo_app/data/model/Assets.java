@@ -1,5 +1,12 @@
 package com.example.spring_demo_app.data.model;
 
+import lombok.*;
+
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class Assets {
     public boolean has_randomize_button;
     public boolean has_group_play;

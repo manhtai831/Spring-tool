@@ -1,13 +1,14 @@
 package com.example.spring_demo_app.data.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 public class Session {
     public String session_id;
     public Date start_time;

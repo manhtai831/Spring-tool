@@ -1,6 +1,8 @@
 package com.example.spring_demo_app.gate;
 
+import com.example.spring_demo_app.common.HeaderStored;
 import com.example.spring_demo_app.controllers.AccountController;
+import com.example.spring_demo_app.controllers.LuckyController;
 import com.example.spring_demo_app.controllers.MktController;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -18,21 +20,52 @@ public class AppSchedule {
     private final OkHttpClient client;
     private final AccountController accountController;
     private final MktController mktController;
+    private final LuckyController luckyController;
 
 
     @Autowired
-    public AppSchedule(OkHttpClient client, AccountController accountController, MktController mktController) {
+    public AppSchedule(OkHttpClient client, AccountController accountController, MktController mktController, LuckyController luckyController) {
         this.client = client;
         this.accountController = accountController;
         this.mktController = mktController;
+        this.luckyController = luckyController;
     }
 
 
-    @Scheduled(cron = "0 0/30 6 * * *", zone = "GMT+7:00")
+    @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException {
         accountController.shopeeLogin();
 
         mktController.shopeeCollectCoin();
+
+        System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+    }
+
+    @Scheduled(cron = "0 30 9,15 * * *", zone = "GMT+7:00")
+    public void luckyNumber() throws IOException {
+        accountController.shopeeLogin();
+
+        luckyController.getLuckyInfo();
+        luckyController.pickLuckyNumber();
+        luckyController.createLuckyGroup();
+        luckyController.createLinkLuckyGroup("");
+        luckyController.getGroupInfoByRel("");
+        luckyController.joinGroup("");
+
+        System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+    }
+
+    @Scheduled(cron = "0 30 16 * * *", zone = "GMT+7:00")
+    public void luckyNumberTmp() throws IOException {
+        accountController.shopeeLogin();
+        HeaderStored.getInstance().removeHeader("origin");
+
+        luckyController.getLuckyInfo();
+        luckyController.pickLuckyNumber();
+        luckyController.createLuckyGroup();
+        luckyController.createLinkLuckyGroup("");
+        luckyController.getGroupInfoByRel("");
+        luckyController.joinGroup("");
 
         System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
     }

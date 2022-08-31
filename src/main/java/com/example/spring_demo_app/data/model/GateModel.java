@@ -1,17 +1,18 @@
 package com.example.spring_demo_app.data.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class GateModel {
-    private Object data;
     private String errorMsg;
+    private String msg;
     private Integer error;
+    private Integer code;
+    private Object data;
+
 
 }

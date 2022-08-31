@@ -24,7 +24,7 @@ public class MktServiceImpl implements MktService {
         RequestBody bodyCoin = RequestBody.create("{}", HeaderStored.MEDIA_TYPE);
 
         Request requestCoin = new Request.Builder().url(ShopeeConstants.ShopeeUrl.BASE_URL + ShopeeConstants.ShopeeMkt.COIN)
-                .headers(Headers.of(HeaderStored.getInstance().headers))
+                .headers(Headers.of(HeaderStored.getInstance().getHeaders()))
                 .post(bodyCoin)
                 .build();
 
