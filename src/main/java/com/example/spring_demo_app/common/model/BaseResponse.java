@@ -24,6 +24,9 @@ public class BaseResponse {
     public static BaseResponse success(Object data) {
         return new BaseResponse(DateTimeUtils.convertTo(DateTimeUtils.P0, new Date()), getRequestId(),  Error.success(), data);
     }
+    public static BaseResponse success() {
+        return new BaseResponse(DateTimeUtils.convertTo(DateTimeUtils.P0, new Date()), getRequestId(),  Error.success(), "");
+    }
 
     public static BaseResponse error(Error error) {
         return new BaseResponse(DateTimeUtils.convertTo(DateTimeUtils.P0, new Date()), getRequestId(),  error, null);

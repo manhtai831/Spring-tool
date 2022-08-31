@@ -20,6 +20,8 @@ public class ShopeeConstants {
         public static final String PICK_NUMBER = "/gc-api/desktop-app-api/lottery/pick/";
         public static final String CREATE_GROUP = "/gc-api/desktop-app-api/lottery/create-group/";
         public static final String JOIN_GROUP = "/gc-api/desktop-app-api/lottery/join-group/";
-        public static final String CLAIM_REWARD = "/gc-api/desktop-app-api/lottery/claim-rewards/";
+        public static final String CLAIM_REWARD = "/gc-api/desktop-app-api/lottery/picking-streak/claim-rewards/";
+        public static final String CREATE_GROUP_LINK = "/gc-api/desktop-app-api/lottery/create-group-link/";
+        public static final String GET_GROUP_BY_REL= "/gc-api/desktop-app-api/lottery/get-group-by-ref/";
     }
 }

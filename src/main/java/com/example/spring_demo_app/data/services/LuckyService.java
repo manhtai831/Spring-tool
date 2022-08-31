@@ -1,17 +1,25 @@
 package com.example.spring_demo_app.data.services;
 
+import com.example.spring_demo_app.data.model.GateModel;
+import com.example.spring_demo_app.data.model.LuckyGroupSession;
 import com.example.spring_demo_app.data.model.LuckyThemeModel;
+
+import java.io.IOException;
 
 public interface LuckyService {
 
-    LuckyThemeModel getLuckyInfo();
+    GateModel getLuckyInfo() throws IOException;
 
-    void pickLuckyNumber();
+    GateModel pickLuckyNumber() throws IOException;
 
-    void claimReward();
+    GateModel claimReward() throws IOException;
 
-    String createLuckyGroup(); // Trả về groupId
+    GateModel createLuckyGroup() throws IOException;
 
-    void joinGroup(String groupId);
+    String createLinkLuckyGroup(String themeID) throws IOException;
+
+    LuckyGroupSession getGroupInfoByRel(String rel) throws IOException;
+
+    GateModel joinGroup(String groupId) throws IOException;
 
 }

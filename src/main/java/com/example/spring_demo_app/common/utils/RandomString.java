@@ -1,10 +1,14 @@
 package com.example.spring_demo_app.common.utils;
 
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.security.SecureRandom;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
+@Setter
 public class RandomString {
 
     /**
@@ -24,40 +28,26 @@ public class RandomString {
 
     public static final String alphanum = upper + lower + digits;
 
-    private final Random random;
+    private final Random random = new Random();
 
-    private final char[] symbols;
+    private  char[] symbols;
 
-    private final char[] buf;
+    private  char[] buf;
 
-    public RandomString(int length, Random random, String symbols) {
+    public RandomString(int length, String symbols) {
         if (length < 1) throw new IllegalArgumentException();
         if (symbols.length() < 2) throw new IllegalArgumentException();
-        this.random = Objects.requireNonNull(random);
+
         this.symbols = symbols.toCharArray();
         this.buf = new char[length];
     }
 
-    /**
-     * Create an alphanumeric string generator.
-     */
-    public RandomString(int length, Random random) {
-        this(length, random, alphanum);
-    }
-
-    /**
-     * Create an alphanumeric strings from a secure generator.
-     */
-    public RandomString(int length) {
-        this(length, new SecureRandom());
-    }
-
-    /**
-     * Create session identifiers.
-     */
     public RandomString() {
-        this(21);
     }
 
 
+    public static void main(String[] args) {
+        RandomString randomString = new RandomString(6, RandomString.digits);
+        System.out.println(randomString.nextString());
+    }
 }

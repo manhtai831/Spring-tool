@@ -29,38 +29,35 @@ public class AccountController {
 
     @GetMapping("/login")
     public BaseResponse shopeeLogin() throws IOException {
-//        AccountModel accountModel = new AccountModel("84943574556", "674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339");
-//
-//        Response response = accountService.login(GsonParserUtils.parseObjectToString(accountModel));
-//
-//        String responseBody = response.body().string();
-//
-//        GateModel gateModel = GsonParserUtils.parseStringToObject(responseBody, GateModel.class);
-//
-//        assert gateModel != null;
-//
-//        if (gateModel.getError() != 0)
-//            return BaseResponse.error(Error.custom(1, "Đăng nhập hệ thống shopee không thành công"));
-//
-//        AccountModel account = GsonParserUtils.parseStringToObject(gateModel.getData().toString(), AccountModel.class);
-//
-//        assert account != null;
-//
-//        accountModel.setUserid(account.getUserid());
-//
-//        accountService.saveAccount(accountModel);
+        AccountModel accountModel = new AccountModel("84943574556", "674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339");
+
+        Response response = accountService.login(GsonParserUtils.parseObjectToString(accountModel));
+
+        String responseBody = response.body().string();
+
+        GateModel gateModel = GsonParserUtils.parseStringToObject(responseBody, GateModel.class);
+
+        assert gateModel != null;
+
+        if (gateModel.getError() != 0)
+            return BaseResponse.error(Error.custom(1, "Đăng nhập hệ thống shopee không thành công"));
+
+        AccountModel account = GsonParserUtils.parseStringToObject(gateModel.getData().toString(), AccountModel.class);
+
+        assert account != null;
+
+        accountModel.setUserid(account.getUserid());
+
+        accountService.saveAccount(accountModel);
 
 
         HeaderStored.getInstance().clear();
 
-//        HeaderStored.getInstance().setHeader(response);
-        HeaderStored.getInstance()
-                .setHeader();
+        HeaderStored.getInstance().setHeader(response);
 
-//        HeaderStored.getInstance().addHeader("SPC_U", account.getUserid().toString());
-        HeaderStored.getInstance().addHeader("SPC_U", "48688687");
+        HeaderStored.getInstance().addHeader("cookie", "SPC_U=48688687");
 
-        return BaseResponse.success(HeaderStored.getInstance().headers.toString());
+        return BaseResponse.success(HeaderStored.getInstance().getHeaders().toString());
     }
 
 }
