@@ -45,17 +45,24 @@ public class AppSchedule {
     public void luckyNumber() throws IOException {
         accountController.shopeeLogin();
 
+        HeaderStored.getInstance().removeHeader("origin");
+
         luckyController.getLuckyInfo();
+
         luckyController.pickLuckyNumber();
+
         luckyController.createLuckyGroup();
+
         luckyController.createLinkLuckyGroup("");
+
         luckyController.getGroupInfoByRel("");
+
         luckyController.joinGroup("");
 
         System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
     }
 
-//    @Scheduled(cron = "0 25 17 * * *", zone = "GMT+7:00")
+//    @Scheduled(cron = "0 10 21 * * *", zone = "GMT+7:00")
 //    public void luckyNumberTmp() throws IOException {
 //        System.out.println("LOGINNNNNNNNNNNNNNNNN");
 //        accountController.shopeeLogin();
