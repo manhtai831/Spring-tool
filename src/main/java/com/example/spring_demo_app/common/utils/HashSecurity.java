@@ -20,6 +20,10 @@ public class HashSecurity {
         }
         return hexString.toString();
     }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException {
+        System.out.println(hash(hash("Khongcho1",MD5),SHA256));
+    }
 }
 
 

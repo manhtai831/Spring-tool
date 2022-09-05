@@ -4,6 +4,7 @@ import com.example.spring_demo_app.common.HeaderStored;
 import com.example.spring_demo_app.common.logging.GsonParserUtils;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.common.model.Error;
+import com.example.spring_demo_app.common.utils.HashSecurity;
 import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.model.GateModel;
 import com.example.spring_demo_app.data.services.AccountService;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @RestController
 @RequestMapping("api/v1/account")
@@ -28,8 +30,9 @@ public class AccountController {
 
 
     @GetMapping("/login")
-    public BaseResponse shopeeLogin() throws IOException {
-        AccountModel accountModel = new AccountModel("84943574556", "674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339");
+    public BaseResponse shopeeLogin(String userName,String password) throws IOException, NoSuchAlgorithmException {
+//        AccountModel accountModel = new AccountModel("84943574556", "674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339");
+        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password,HashSecurity.MD5),HashSecurity.SHA256));
 
         Response response = accountService.login(GsonParserUtils.parseObjectToString(accountModel));
 
