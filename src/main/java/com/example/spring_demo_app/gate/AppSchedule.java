@@ -41,7 +41,8 @@ public class AppSchedule {
         accountModels.add(new AccountModel("84943574556", "Khongcho1"));
         accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.forEach(accountModel -> {
+
+        for (AccountModel accountModel : accountModels) {
             try {
                 accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
@@ -51,7 +52,8 @@ public class AppSchedule {
             } catch (Exception e) {
                 System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
             }
-        });
+        }
+
 
 
     }
@@ -62,7 +64,9 @@ public class AppSchedule {
         accountModels.add(new AccountModel("84943574556", "Khongcho1"));
         accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.forEach(accountModel -> {
+
+
+        for (AccountModel accountModel : accountModels) {
             try {
                 accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
@@ -88,8 +92,7 @@ public class AppSchedule {
                 System.out.println(new Date() + " Coin not collected");
             }
 
-        });
-
+        }
     }
     @Scheduled(cron = "0 0/30 * * * *", zone = "GMT+7:00")
     public void pingToServer() throws IOException {
