@@ -1,9 +1,11 @@
 package com.example.spring_demo_app.controllers;
 
+import com.example.spring_demo_app.common.HeaderStored;
 import com.example.spring_demo_app.common.model.BaseResponse;
+import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.model.GateModel;
 import com.example.spring_demo_app.data.model.LuckyGroupSession;
-import com.example.spring_demo_app.data.model.LuckyThemeModel;
+import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.data.services.LuckyService;
 import com.example.spring_demo_app.domain.service.LuckyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +15,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/lucky")
 public class LuckyController {
 
     private final LuckyService luckyService;
+    private final AccountController accountService;
 
     @Autowired
-    public LuckyController(LuckyServiceImpl luckyService) {
+    public LuckyController(LuckyServiceImpl luckyService, AccountController accountService) {
         this.luckyService = luckyService;
+        this.accountService = accountService;
     }
 
     @GetMapping("/info")
@@ -33,19 +40,19 @@ public class LuckyController {
 
     @GetMapping("/pick")
     public BaseResponse pickLuckyNumber() throws IOException {
-       GateModel gateModel = luckyService.pickLuckyNumber();
+        GateModel gateModel = luckyService.pickLuckyNumber();
         return BaseResponse.success(gateModel);
     }
 
     @GetMapping("/claim")
     public BaseResponse claimReward() throws IOException {
-       GateModel gateModel = luckyService.claimReward();
+        GateModel gateModel = luckyService.claimReward();
         return BaseResponse.success(gateModel);
     }
 
     @GetMapping("/create_group")
     public BaseResponse createLuckyGroup() throws IOException {
-      GateModel gateModel =  luckyService.createLuckyGroup();
+        GateModel gateModel = luckyService.createLuckyGroup();
         return BaseResponse.success(gateModel);
     }
 
@@ -57,13 +64,51 @@ public class LuckyController {
 
     @GetMapping("/group-by-rel")
     public BaseResponse getGroupInfoByRel(String rel) throws IOException {
-        LuckyGroupSession session =  luckyService.getGroupInfoByRel(rel);
+        LuckyGroupSession session = luckyService.getGroupInfoByRel(rel);
         return BaseResponse.success(session);
     }
 
     @GetMapping("/join-group")
     public BaseResponse joinGroup(String groupId) throws IOException {
-      GateModel gateModel =  luckyService.joinGroup(groupId);
+        GateModel gateModel = luckyService.joinGroup(groupId);
         return BaseResponse.success(gateModel);
+    }
+
+    @GetMapping("/all")
+    public BaseResponse all() throws IOException {
+        List<AccountModel> accountModels = new ArrayList<>();
+        accountModels.add(new AccountModel("84943574556", "Khongcho1"));
+//        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+        accountModels.add(new AccountModel("84378041531", "heocon"));
+
+
+        for (AccountModel accountModel : accountModels) {
+            try {
+                accountService.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+
+                HeaderStored.getInstance().removeHeader("origin");
+
+                luckyService.getLuckyInfo();
+
+                luckyService.pickLuckyNumber();
+
+                if (accountModel.getPhone().equals("84943574556")) {
+                    luckyService.createLuckyGroup();
+
+                    luckyService.createLinkLuckyGroup("");
+
+                }
+
+                luckyService.getGroupInfoByRel("");
+
+                luckyService.joinGroup("");
+
+                System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+            } catch (Exception e) {
+                System.out.println(new Date() + " Coin not collected");
+            }
+
+        }
+        return BaseResponse.success("gateModel");
     }
 }

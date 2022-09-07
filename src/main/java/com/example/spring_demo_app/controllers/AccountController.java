@@ -31,8 +31,8 @@ public class AccountController {
 
     @GetMapping("/login")
     public BaseResponse shopeeLogin(String userName,String password) throws IOException, NoSuchAlgorithmException {
-//        AccountModel accountModel = new AccountModel("84943574556", "674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339");
-        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password,HashSecurity.MD5),HashSecurity.SHA256));
+        AccountModel accountModel = new AccountModel("84973589126", HashSecurity.hash(HashSecurity.hash("Khongcho1",HashSecurity.MD5),HashSecurity.SHA256));
+//        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password,HashSecurity.MD5),HashSecurity.SHA256));
 
         Response response = accountService.login(GsonParserUtils.parseObjectToString(accountModel));
 
@@ -43,7 +43,7 @@ public class AccountController {
         assert gateModel != null;
 
         if (gateModel.getError() != 0)
-            return BaseResponse.error(Error.custom(1, "Đăng nhập hệ thống shopee không thành công"));
+            return BaseResponse.error(Error.custom(1, "Đăng nhập hệ thống shopee không thành công: " + gateModel));
         String s = GsonParserUtils.parseObjectToString(gateModel.getData());
         AccountModel account = GsonParserUtils.parseStringToObject(s, AccountModel.class);
 
@@ -58,7 +58,7 @@ public class AccountController {
 
         HeaderStored.getInstance().setHeader(response);
 
-        HeaderStored.getInstance().addHeader("cookie", "SPC_U=48688687");
+        HeaderStored.getInstance().addHeader("cookie", "SPC_U=" + account.getUserid());
 
         return BaseResponse.success(HeaderStored.getInstance().getHeaders().toString());
     }

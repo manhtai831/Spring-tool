@@ -199,7 +199,7 @@ public class LuckyServiceImpl implements LuckyService {
         Response response = client.newCall(requestCoin).execute();
 
         String body = response.body().string();
-
+        System.out.println("-------------getGroupInfoByRel__________ Group Id " + GroupStored.getInstance().getGroupSession().getGroup().getGroup_id()+ body);
         return GsonParserUtils.parseStringToObject(body, GateModel.class);
     }
 }

@@ -42,7 +42,9 @@ public class HeaderStored {
 
     public void addHeader(String key, String value) {
         if (headers.containsKey(key)) {
-            headers.put(key, headers.get(key) + "; " + value);
+            String tmp =  headers.get(key);
+            headers.remove(key);
+            headers.put(key, tmp + "; " + value);
             return;
         }
         headers.put(key, value);

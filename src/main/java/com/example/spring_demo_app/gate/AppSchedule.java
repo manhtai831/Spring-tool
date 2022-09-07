@@ -37,23 +37,27 @@ public class AppSchedule {
 
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException {
-        List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1"));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-        accountModels.add(new AccountModel("84378041531", "heocon"));
+        synchronized (this) {
+            List<AccountModel> accountModels = new ArrayList<>();
+            accountModels.add(new AccountModel("84943574556", "Khongcho1"));
+//            accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+            accountModels.add(new AccountModel("84378041531", "heocon"));
 
-        for (AccountModel accountModel : accountModels) {
-            try {
-                accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+            for (AccountModel accountModel : accountModels) {
 
-                mktController.shopeeCollectCoin();
 
-                System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-            } catch (Exception e) {
-                System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+                try {
+                    accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+
+                    mktController.shopeeCollectCoin();
+
+                    System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+                } catch (Exception e) {
+                    System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+                }
             }
-        }
 
+        }
 
 
     }
@@ -62,7 +66,7 @@ public class AppSchedule {
     public void luckyNumber() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
         accountModels.add(new AccountModel("84943574556", "Khongcho1"));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+//        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
 
 
@@ -94,6 +98,7 @@ public class AppSchedule {
 
         }
     }
+
     @Scheduled(cron = "0 0/30 * * * *", zone = "GMT+7:00")
     public void pingToServer() throws IOException {
 
