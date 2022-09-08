@@ -31,8 +31,8 @@ public class AccountController {
 
     @GetMapping("/login")
     public BaseResponse shopeeLogin(String userName,String password) throws IOException, NoSuchAlgorithmException {
-        AccountModel accountModel = new AccountModel("84973589126", HashSecurity.hash(HashSecurity.hash("Khongcho1",HashSecurity.MD5),HashSecurity.SHA256));
-//        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password,HashSecurity.MD5),HashSecurity.SHA256));
+//        AccountModel accountModel = new AccountModel("84973589126", HashSecurity.hash(HashSecurity.hash("Khongcho1",HashSecurity.MD5),HashSecurity.SHA256));
+        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password,HashSecurity.MD5),HashSecurity.SHA256));
 
         Response response = accountService.login(GsonParserUtils.parseObjectToString(accountModel));
 
