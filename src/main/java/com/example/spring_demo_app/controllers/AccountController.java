@@ -51,7 +51,7 @@ public class AccountController {
 
         accountModel.setUserid(account.getUserid());
 
-        accountService.saveAccount(accountModel);
+//        accountService.saveAccount(accountModel);
 
 
         HeaderStored.getInstance().clear();

@@ -37,10 +37,9 @@ public class AppSchedule {
 
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException {
-        synchronized (this) {
             List<AccountModel> accountModels = new ArrayList<>();
             accountModels.add(new AccountModel("84943574556", "Khongcho1"));
-//            accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+            accountModels.add(new AccountModel("84973589126", "Khongcho1"));
             accountModels.add(new AccountModel("84378041531", "heocon"));
 
             for (AccountModel accountModel : accountModels) {
@@ -57,8 +56,6 @@ public class AppSchedule {
                 }
             }
 
-        }
-
 
     }
 
@@ -66,7 +63,7 @@ public class AppSchedule {
     public void luckyNumber() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
         accountModels.add(new AccountModel("84943574556", "Khongcho1"));
-//        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
 
 
@@ -74,7 +71,6 @@ public class AppSchedule {
             try {
                 accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
-                HeaderStored.getInstance().removeHeader("origin");
 
                 luckyController.getLuckyInfo();
 
