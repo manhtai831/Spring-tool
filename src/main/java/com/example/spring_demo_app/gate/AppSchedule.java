@@ -38,7 +38,7 @@ public class AppSchedule {
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException {
             List<AccountModel> accountModels = new ArrayList<>();
-            accountModels.add(new AccountModel("84943574556", "Khongcho1"));
+            accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
             accountModels.add(new AccountModel("84973589126", "Khongcho1"));
             accountModels.add(new AccountModel("84378041531", "heocon"));
 
@@ -62,7 +62,7 @@ public class AppSchedule {
     @Scheduled(cron = "0 0 9,15 * * *", zone = "GMT+7:00")
     public void luckyNumber() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1"));
+        accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
         accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
 
@@ -76,7 +76,9 @@ public class AppSchedule {
 
                 luckyController.pickLuckyNumber();
 
-                if (accountModel.getPhone().equals("84943574556")) {
+                luckyController.claimReward();
+
+                if (accountModel.getIsLeader()) {
                     luckyController.createLuckyGroup();
 
                     luckyController.createLinkLuckyGroup("");

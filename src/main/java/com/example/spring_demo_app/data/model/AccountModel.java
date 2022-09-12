@@ -1,6 +1,5 @@
 package com.example.spring_demo_app.data.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Data
@@ -15,9 +14,18 @@ public class AccountModel {
 
     private String password;
 
+    private Boolean isLeader;
+
     public AccountModel(String phone, String password) {
         this.phone = phone;
         this.password = password;
+        this.isLeader = false;
+    }
+
+    public AccountModel(String phone, String password, Boolean isLeader) {
+        this.phone = phone;
+        this.password = password;
+        this.isLeader = isLeader;
     }
 
     public String toJson() {
