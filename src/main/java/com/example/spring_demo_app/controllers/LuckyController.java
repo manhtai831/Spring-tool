@@ -78,7 +78,7 @@ public class LuckyController {
     public BaseResponse all() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
         accountModels.add(new AccountModel("84943574556", "Khongcho1"));
-//        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
 
 
@@ -91,6 +91,8 @@ public class LuckyController {
                 luckyService.getLuckyInfo();
 
                 luckyService.pickLuckyNumber();
+
+                luckyService.claimReward();
 
                 if (accountModel.getPhone().equals("84943574556")) {
                     luckyService.createLuckyGroup();
