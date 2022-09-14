@@ -77,9 +77,10 @@ public class LuckyController {
     @GetMapping("/all")
     public BaseResponse all() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1"));
+        accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
         accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
+        accountModels.add(new AccountModel("84589427969", "123@123aA"));
 
 
         for (AccountModel accountModel : accountModels) {
@@ -94,7 +95,7 @@ public class LuckyController {
 
                 luckyService.claimReward();
 
-                if (accountModel.getPhone().equals("84943574556")) {
+                if (accountModel.getIsLeader()) {
                     luckyService.createLuckyGroup();
 
                     luckyService.createLinkLuckyGroup("");

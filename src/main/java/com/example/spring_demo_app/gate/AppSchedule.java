@@ -1,6 +1,5 @@
 package com.example.spring_demo_app.gate;
 
-import com.example.spring_demo_app.common.HeaderStored;
 import com.example.spring_demo_app.controllers.AccountController;
 import com.example.spring_demo_app.controllers.LuckyController;
 import com.example.spring_demo_app.controllers.MktController;
@@ -37,24 +36,24 @@ public class AppSchedule {
 
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException {
-            List<AccountModel> accountModels = new ArrayList<>();
-            accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
-            accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-            accountModels.add(new AccountModel("84378041531", "heocon"));
+        List<AccountModel> accountModels = new ArrayList<>();
+        accountModels.add(new AccountModel("84943574556", "Khongcho1", true));
+        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
+        accountModels.add(new AccountModel("84378041531", "heocon"));
+        accountModels.add(new AccountModel("84589427969", "123@123aA"));
+        for (AccountModel accountModel : accountModels) {
 
-            for (AccountModel accountModel : accountModels) {
 
+            try {
+                accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
-                try {
-                    accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+                mktController.shopeeCollectCoin();
 
-                    mktController.shopeeCollectCoin();
-
-                    System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-                } catch (Exception e) {
-                    System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-                }
+                System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+            } catch (Exception e) {
+                System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
             }
+        }
 
 
     }
@@ -62,9 +61,10 @@ public class AppSchedule {
     @Scheduled(cron = "0 0 9,15 * * *", zone = "GMT+7:00")
     public void luckyNumber() throws IOException {
         List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
+        accountModels.add(new AccountModel("84943574556", "Khongcho1", true));
         accountModels.add(new AccountModel("84973589126", "Khongcho1"));
         accountModels.add(new AccountModel("84378041531", "heocon"));
+        accountModels.add(new AccountModel("84589427969", "123@123aA"));
 
 
         for (AccountModel accountModel : accountModels) {
