@@ -1,5 +1,6 @@
 package com.example.spring_demo_app.controllers;
 
+import com.example.spring_demo_app.common.AccountManager;
 import com.example.spring_demo_app.common.HeaderStored;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.data.model.AccountModel;
@@ -76,14 +77,8 @@ public class LuckyController {
 
     @GetMapping("/all")
     public BaseResponse all() throws IOException {
-        List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1",true));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-        accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.add(new AccountModel("84589427969", "123@123aA"));
 
-
-        for (AccountModel accountModel : accountModels) {
+        for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
             try {
                 accountService.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 

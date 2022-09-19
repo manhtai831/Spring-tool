@@ -1,5 +1,6 @@
 package com.example.spring_demo_app.gate;
 
+import com.example.spring_demo_app.common.AccountManager;
 import com.example.spring_demo_app.controllers.AccountController;
 import com.example.spring_demo_app.controllers.LuckyController;
 import com.example.spring_demo_app.controllers.MktController;
@@ -35,13 +36,9 @@ public class AppSchedule {
 
 
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
-    public void getCoinDaily() throws IOException {
-        List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1", true));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-        accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.add(new AccountModel("84589427969", "123@123aA"));
-        for (AccountModel accountModel : accountModels) {
+    public void getCoinDaily() {
+
+        for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
             try {
@@ -59,15 +56,11 @@ public class AppSchedule {
     }
 
     @Scheduled(cron = "0 0 9,15 * * *", zone = "GMT+7:00")
-    public void luckyNumber() throws IOException {
-        List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1", true));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-        accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.add(new AccountModel("84589427969", "123@123aA"));
+    public void luckyNumber() {
 
 
-        for (AccountModel accountModel : accountModels) {
+
+        for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
             try {
                 accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
@@ -97,7 +90,7 @@ public class AppSchedule {
         }
     }
 
-    @Scheduled(cron = "0 0/30 * * * *", zone = "GMT+7:00")
+    @Scheduled(cron = "0 0/50 * * * *", zone = "GMT+7:00")
     public void pingToServer() throws IOException {
 
         Request request = new Request.Builder().url("https://shopee-tool.herokuapp.com/ping").build();

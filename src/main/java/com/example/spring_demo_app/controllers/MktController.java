@@ -1,5 +1,6 @@
 package com.example.spring_demo_app.controllers;
 
+import com.example.spring_demo_app.common.AccountManager;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.services.MktService;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/mkt")
@@ -38,12 +37,8 @@ public class MktController {
 
     @GetMapping("/all")
     public BaseResponse all() throws IOException {
-        List<AccountModel> accountModels = new ArrayList<>();
-        accountModels.add(new AccountModel("84943574556", "Khongcho1", true));
-        accountModels.add(new AccountModel("84973589126", "Khongcho1"));
-        accountModels.add(new AccountModel("84378041531", "heocon"));
-        accountModels.add(new AccountModel("84589427969", "123@123aA"));
-        for (AccountModel accountModel : accountModels) {
+
+        for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
             try {

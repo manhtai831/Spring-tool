@@ -1,11 +1,14 @@
 package com.example.spring_demo_app.data.model;
 
-import lombok.*;
+import com.example.spring_demo_app.common.utils.HashSecurity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
 public class AccountModel {
     private String phone;
@@ -37,5 +40,21 @@ public class AccountModel {
                 "    \"phone\": \"" + phone + "\"\n" +
                 "    \"password\": \"" + password + "\",\n" +
                 "}";
+    }
+
+    public String getPhone() {
+        return HashSecurity.unHash(HashSecurity.unHash(phone));
+    }
+
+    public Long getUserid() {
+        return userid;
+    }
+
+    public String getPassword() {
+        return HashSecurity.unHash(HashSecurity.unHash(password));
+    }
+
+    public Boolean getLeader() {
+        return isLeader;
     }
 }

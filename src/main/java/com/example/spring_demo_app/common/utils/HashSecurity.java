@@ -1,5 +1,7 @@
 package com.example.spring_demo_app.common.utils;
 
+import org.springframework.security.crypto.codec.Hex;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -21,8 +23,29 @@ public class HashSecurity {
         return hexString.toString();
     }
 
+
+    public static String privateHash(String plainText) {
+
+        byte[] bytes = plainText.getBytes();
+        return String.valueOf(Hex.encode(bytes));
+
+    }
+
+    public static String unHash(String hashed) {
+
+
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < hashed.length(); i += 2) {
+            String str = hashed.substring(i, i + 2);
+            output.append((char) Integer.parseInt(str, 16));
+        }
+        return output.toString().trim();
+
+    }
+
+
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        System.out.println(hash(hash("Khongcho1",MD5),SHA256));
+
     }
 }
 
