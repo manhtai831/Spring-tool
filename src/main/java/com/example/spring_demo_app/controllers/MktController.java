@@ -3,7 +3,9 @@ package com.example.spring_demo_app.controllers;
 import com.example.spring_demo_app.common.AccountManager;
 import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.data.model.AccountModel;
+import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.data.services.MktService;
+import com.example.spring_demo_app.domain.service.AccountServiceImpl;
 import com.example.spring_demo_app.domain.service.MktServiceImpl;
 import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import okhttp3.Response;
@@ -20,12 +22,12 @@ import java.util.Date;
 @RequestMapping("api/v1/mkt")
 public class MktController {
     private final MktService mktService;
-    private final AccountController accountController;
+    private final AccountService accountService;
 
     @Autowired
-    public MktController(UserServiceImpl userService, MktServiceImpl mktService, AccountController accountController) {
+    public MktController(UserServiceImpl userService, MktServiceImpl mktService, AccountServiceImpl accountService) {
         this.mktService = mktService;
-        this.accountController = accountController;
+        this.accountService = accountService;
     }
 
     @GetMapping("/collect-coin")
@@ -42,7 +44,7 @@ public class MktController {
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
-            accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+            accountService.login(accountModel.getPhone(), accountModel.getPassword());
 
             shopeeCollectCoin();
 

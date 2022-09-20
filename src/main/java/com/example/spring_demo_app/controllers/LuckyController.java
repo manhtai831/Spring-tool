@@ -6,7 +6,9 @@ import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.model.GateModel;
 import com.example.spring_demo_app.data.model.LuckyGroupSession;
+import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.data.services.LuckyService;
+import com.example.spring_demo_app.domain.service.AccountServiceImpl;
 import com.example.spring_demo_app.domain.service.LuckyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -24,10 +26,10 @@ import java.util.Map;
 public class LuckyController {
 
     private final LuckyService luckyService;
-    private final AccountController accountService;
+    private final AccountService accountService;
 
     @Autowired
-    public LuckyController(LuckyServiceImpl luckyService, AccountController accountService) {
+    public LuckyController(LuckyServiceImpl luckyService, AccountServiceImpl accountService) {
         this.luckyService = luckyService;
         this.accountService = accountService;
     }
@@ -79,7 +81,7 @@ public class LuckyController {
         Map<String, Object> data = new HashMap<>();
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
-            accountService.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+            accountService.login(accountModel.getPhone(), accountModel.getPassword());
 
             HeaderStored.getInstance().removeHeader("origin");
 
