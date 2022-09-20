@@ -72,6 +72,7 @@ public class AccountModel {
         return "{\n" +
                 "    \"phone\": \"" + phone + "\"\n" +
                 "    \"password\": \"" + password + "\",\n" +
+                "    \"userId\": \"" + userid + "\",\n" +
                 "}";
     }
 

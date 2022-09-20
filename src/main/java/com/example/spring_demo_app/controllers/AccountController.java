@@ -29,7 +29,7 @@ public class AccountController {
     public BaseResponse shopeeLogin(@RequestParam() String userName,@RequestParam() String password,@RequestParam() String spcF) throws IOException, NoSuchAlgorithmException {
         AccountModel accountModel = accountService.login(userName, password,  spcF);
 
-        return BaseResponse.success(accountModel.toString());
+        return BaseResponse.success(accountModel.toJson());
     }
 
 }
