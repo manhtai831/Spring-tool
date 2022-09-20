@@ -6,7 +6,6 @@ import com.example.spring_demo_app.common.model.BaseResponse;
 import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.model.GateModel;
 import com.example.spring_demo_app.data.model.LuckyGroupSession;
-import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.data.services.LuckyService;
 import com.example.spring_demo_app.domain.service.LuckyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/lucky")
@@ -76,37 +75,33 @@ public class LuckyController {
     }
 
     @GetMapping("/all")
-    public BaseResponse all() throws IOException {
-
+    public BaseResponse all() throws IOException, NoSuchAlgorithmException {
+        Map<String, Object> data = new HashMap<>();
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
-            try {
-                accountService.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
-                HeaderStored.getInstance().removeHeader("origin");
+            accountService.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
-                luckyService.getLuckyInfo();
+            HeaderStored.getInstance().removeHeader("origin");
 
-                luckyService.pickLuckyNumber();
+            luckyService.getLuckyInfo();
 
-                luckyService.claimReward();
+            GateModel gateModel = luckyService.pickLuckyNumber();
 
-                if (accountModel.getIsLeader()) {
-                    luckyService.createLuckyGroup();
+            luckyService.claimReward();
 
-                    luckyService.createLinkLuckyGroup("");
+            if (accountModel.getIsLeader()) {
+                luckyService.createLuckyGroup();
 
-                }
+                luckyService.createLinkLuckyGroup("");
 
-                luckyService.getGroupInfoByRel("");
-
-                luckyService.joinGroup("");
-
-                System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-            } catch (Exception e) {
-                System.out.println(new Date() + " Coin not collected");
             }
 
+            luckyService.getGroupInfoByRel("");
+
+            luckyService.joinGroup("");
+            data.put(accountModel.getPhone(), gateModel.getData());
+
         }
-        return BaseResponse.success("gateModel");
+        return BaseResponse.success(data);
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 @RestController
@@ -36,20 +37,17 @@ public class MktController {
     }
 
     @GetMapping("/all")
-    public BaseResponse all() throws IOException {
+    public BaseResponse all() throws IOException, NoSuchAlgorithmException {
 
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
-            try {
-                accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
+            accountController.shopeeLogin(accountModel.getPhone(), accountModel.getPassword());
 
-                shopeeCollectCoin();
+            shopeeCollectCoin();
 
-                System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-            } catch (Exception e) {
-                System.out.println(new Date() + " Coin not collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
-            }
+            System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
+
         }
         return BaseResponse.success("OK");
     }

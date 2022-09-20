@@ -4,11 +4,12 @@ import com.example.spring_demo_app.data.model.AccountModel;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 public interface AccountService {
     void saveAccount(AccountModel accountModel);
 
     void updateAccount(AccountModel accountModel);
 
-    Response login(String json) throws IOException;
+    AccountModel login(String userName,String password) throws IOException, NoSuchAlgorithmException;
 }
