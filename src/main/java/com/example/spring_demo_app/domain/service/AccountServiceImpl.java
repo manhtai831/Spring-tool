@@ -54,15 +54,14 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public AccountModel login(String userName, String password) throws IOException, NoSuchAlgorithmException {
-        AccountModel accountModel = new AccountModel(userName, HashSecurity.hash(HashSecurity.hash(password, HashSecurity.MD5), HashSecurity.SHA256));
-
+    public AccountModel login(String userName, String password, String spcF) throws IOException, NoSuchAlgorithmException {
+        AccountModel accountModel = new AccountModel(userName, HashSecurity.unHash(HashSecurity.unHash(password)));
 
         RequestBody body = RequestBody.create(GsonParserUtils.parseObjectToString(accountModel), MEDIA_TYPE);
 
         Request request = new Request.Builder().url(ShopeeConstants.ShopeeUrl.BASE_URL + ShopeeConstants.ShopeeAuth.LOGIN)
                 .addHeader("x-csrftoken", "aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii")
-                .addHeader("cookie", "SPC_F=gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k; csrftoken=aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii")
+                .addHeader("cookie", "SPC_F=" + spcF + "; csrftoken=aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii")
                 .post(body)
                 .build();
         Response response = client.newCall(request).execute();
@@ -71,7 +70,7 @@ public class AccountServiceImpl implements AccountService {
 
         GateModel gateModel = GsonParserUtils.parseStringToObject(responseBody, GateModel.class);
 
-
+        System.out.println("AAAAAAAAAAAAAAA" + responseBody);
         if (gateModel == null || gateModel.getError() != 0) return null;
 
         String s = GsonParserUtils.parseObjectToString(gateModel.getData());

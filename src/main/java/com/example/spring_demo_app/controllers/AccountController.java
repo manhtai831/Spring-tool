@@ -1,12 +1,14 @@
 package com.example.spring_demo_app.controllers;
 
 import com.example.spring_demo_app.common.model.BaseResponse;
+import com.example.spring_demo_app.common.utils.HashSecurity;
 import com.example.spring_demo_app.data.model.AccountModel;
 import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.domain.service.AccountServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -24,10 +26,10 @@ public class AccountController {
 
 
     @GetMapping("/login")
-    public BaseResponse shopeeLogin(String userName, String password) throws IOException, NoSuchAlgorithmException {
-        AccountModel accountModel = accountService.login(userName, password);
+    public BaseResponse shopeeLogin(@RequestParam() String userName,@RequestParam() String password,@RequestParam() String spcF) throws IOException, NoSuchAlgorithmException {
+        AccountModel accountModel = accountService.login(userName, password,  spcF);
 
-        return BaseResponse.success(accountModel);
+        return BaseResponse.success(accountModel.toString());
     }
 
 }

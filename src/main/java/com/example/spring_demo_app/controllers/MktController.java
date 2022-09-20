@@ -44,7 +44,7 @@ public class MktController {
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
-            accountService.login(accountModel.getPhone(), accountModel.getPassword());
+            accountService.login(accountModel.getPhone(), accountModel.getPassword(), accountModel.getSpcF());
 
             shopeeCollectCoin();
 

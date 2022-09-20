@@ -45,7 +45,9 @@ public class HashSecurity {
 
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-
+        System.out.println(unHash(unHash("346236383666366536373633363836663331")));
+        System.out.println(hash(hash("Khongcho1",MD5),SHA256));
+        System.out.println(privateHash(privateHash("674baeebefa807fb3da8e561e4746d168d9b5317621f7dd810148649e833c339")));
     }
 }
 

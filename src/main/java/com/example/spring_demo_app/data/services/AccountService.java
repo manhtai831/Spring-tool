@@ -11,5 +11,5 @@ public interface AccountService {
 
     void updateAccount(AccountModel accountModel);
 
-    AccountModel login(String userName,String password) throws IOException, NoSuchAlgorithmException;
+    AccountModel login(String userName,String password, String spcF) throws IOException, NoSuchAlgorithmException;
 }

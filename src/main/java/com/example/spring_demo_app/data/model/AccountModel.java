@@ -16,6 +16,7 @@ public class AccountModel {
     private Long userid;
 
     private String password;
+    private String spcF;
 
     private Boolean isLeader;
 
@@ -25,10 +26,42 @@ public class AccountModel {
         this.isLeader = false;
     }
 
-    public AccountModel(String phone, String password, Boolean isLeader) {
+    public AccountModel(String phone, String password, String spcF, Boolean isLeader) {
         this.phone = phone;
         this.password = password;
+        this.spcF = spcF;
         this.isLeader = isLeader;
+    }
+
+    public static class Builder {
+        private AccountModel accountModel;
+
+        public Builder() {
+            accountModel = new AccountModel();
+        }
+
+        public Builder setPhone(String phone) {
+            accountModel.setPhone(phone);
+            return this;
+        }
+
+       public Builder setPassword(String password) {
+            accountModel.setPassword(password);
+            return this;
+        }
+
+      public   Builder setSpcF(String spcF) {
+            accountModel.setSpcF(spcF);
+            return this;
+        }
+      public   Builder setIsLeader(Boolean isLeader) {
+            accountModel.setIsLeader(isLeader);
+            return this;
+        }
+
+       public AccountModel build() {
+            return accountModel;
+        }
     }
 
     public String toJson() {
@@ -56,5 +89,9 @@ public class AccountModel {
 
     public Boolean getLeader() {
         return isLeader;
+    }
+
+    public String getSpcF() {
+        return spcF;
     }
 }
