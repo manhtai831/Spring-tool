@@ -81,7 +81,7 @@ public class LuckyController {
         Map<String, Object> data = new HashMap<>();
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
-            accountService.login(accountModel.getPhone(), accountModel.getPassword(),accountModel.getSpcF());
+            accountService.login(accountModel.getPhone(), accountModel.getPassword(), accountModel.getSpcF());
 
             HeaderStored.getInstance().removeHeader("origin");
 

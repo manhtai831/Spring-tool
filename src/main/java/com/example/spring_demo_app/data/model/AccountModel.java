@@ -37,7 +37,7 @@ public class AccountModel {
         private AccountModel accountModel;
 
         public Builder() {
-            accountModel = new AccountModel();
+            accountModel = new AccountModel();accountModel.setIsLeader(false);
         }
 
         public Builder setPhone(String phone) {
@@ -45,21 +45,22 @@ public class AccountModel {
             return this;
         }
 
-       public Builder setPassword(String password) {
+        public Builder setPassword(String password) {
             accountModel.setPassword(password);
             return this;
         }
 
-      public   Builder setSpcF(String spcF) {
+        public Builder setSpcF(String spcF) {
             accountModel.setSpcF(spcF);
             return this;
         }
-      public   Builder setIsLeader(Boolean isLeader) {
+
+        public Builder setIsLeader(Boolean isLeader) {
             accountModel.setIsLeader(isLeader);
             return this;
         }
 
-       public AccountModel build() {
+        public AccountModel build() {
             return accountModel;
         }
     }
@@ -89,6 +90,7 @@ public class AccountModel {
     }
 
     public Boolean getLeader() {
+
         return isLeader;
     }
 
