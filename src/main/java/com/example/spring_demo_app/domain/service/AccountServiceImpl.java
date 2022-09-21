@@ -55,9 +55,10 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountModel login(String userName, String password, String spcF) throws IOException, NoSuchAlgorithmException {
-        AccountModel accountModel = new AccountModel(userName, HashSecurity.unHash(HashSecurity.unHash(password)));
-
-        RequestBody body = RequestBody.create(GsonParserUtils.parseObjectToString(accountModel), MEDIA_TYPE);
+        AccountModel accountModel = new AccountModel(userName, password);
+String json = GsonParserUtils.parseObjectToString(accountModel);
+        RequestBody body = RequestBody.create(json, MEDIA_TYPE);
+        System.out.println("LOGIN REQUEST JSON: " +json );
 
         Request request = new Request.Builder().url(ShopeeConstants.ShopeeUrl.BASE_URL + ShopeeConstants.ShopeeAuth.LOGIN)
                 .addHeader("x-csrftoken", "aWKV70orJMVv1Rl7T2xoDUx7X0Rhxvii")

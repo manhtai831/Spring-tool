@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/mkt")
@@ -25,7 +27,7 @@ public class MktController {
     private final AccountService accountService;
 
     @Autowired
-    public MktController(UserServiceImpl userService, MktServiceImpl mktService, AccountServiceImpl accountService) {
+    public MktController( MktServiceImpl mktService, AccountServiceImpl accountService) {
         this.mktService = mktService;
         this.accountService = accountService;
     }
@@ -40,17 +42,18 @@ public class MktController {
 
     @GetMapping("/all")
     public BaseResponse all() throws IOException, NoSuchAlgorithmException {
+        Map<String, Object> map = new HashMap<>();
 
         for (AccountModel accountModel : AccountManager.getInstance().getAccounts()) {
 
 
             accountService.login(accountModel.getPhone(), accountModel.getPassword(), accountModel.getSpcF());
 
-            shopeeCollectCoin();
-
+            BaseResponse response = shopeeCollectCoin();
+            map.put(accountModel.getPhone(), response.getData());
             System.out.println(new Date() + " Coin collected.\nhttps://shopee-tool.herokuapp.com/api/v1/mkt/collect-coin\n");
 
         }
-        return BaseResponse.success("OK");
+        return BaseResponse.success(map);
     }
 }
