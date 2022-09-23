@@ -7,6 +7,8 @@ import java.util.List;
 
 public class AccountManager {
     static AccountManager accountManager;
+    private static final String spcf0 = "gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k";
+    private static final String spcf1 = "6RHm64EI5Bp2L5MbIVlZg1b7n4daIXIT";
 
     public static AccountManager getInstance() {
         if (accountManager == null) accountManager = new AccountManager();
@@ -15,8 +17,7 @@ public class AccountManager {
 
     public List<AccountModel> getAccounts() {
         List<AccountModel> accountModels = new ArrayList<>();
-        String spcf0 = "gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k";
-        String spcf1 = "6RHm64EI5Bp2L5MbIVlZg1b7n4daIXIT";
+
 //        84943574556
         accountModels.add(new AccountModel.Builder()
                 .setPhone("33383334333933343333333533373334333533353336")
