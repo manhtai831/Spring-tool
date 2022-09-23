@@ -9,6 +9,7 @@ public class AccountManager {
     static AccountManager accountManager;
     private static final String spcf0 = "gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k";
     private static final String spcf1 = "6RHm64EI5Bp2L5MbIVlZg1b7n4daIXIT";
+    private static final String spcf2 = "eTf4w0o6radSXHpHAeVXRmtyKHY5dOWs";
 
     public static AccountManager getInstance() {
         if (accountManager == null) accountManager = new AccountManager();
@@ -51,10 +52,16 @@ public class AccountManager {
                 .build());
 //        84973463297|
         accountModels.add(new AccountModel.Builder()
-                .setPhone("33383334333933373333333433363333333233393337")
+                .setPhone("33383334333933383338333833373332333733313332")
                 .setPassword("3336333733343632363136353635363236353636363133383330333736363632333336343631333836353335333633313635333433373334333636343331333633383634333936323335333333313337333633323331363633373634363433383331333033313334333833363334333936353338333333333633333333333339")
                 .setSpcF(spcf1)
                 .setIsLeader(true)
+                .build());
+//        84988872712|
+        accountModels.add(new AccountModel.Builder()
+                .setPhone("33383334333933373333333433363333333233393337")
+                .setPassword("3336333733343632363136353635363236353636363133383330333736363632333336343631333836353335333633313635333433373334333636343331333633383634333936323335333333313337333633323331363633373634363433383331333033313334333833363334333936353338333333333633333333333339")
+                .setSpcF(spcf2)
                 .build());
 
 
