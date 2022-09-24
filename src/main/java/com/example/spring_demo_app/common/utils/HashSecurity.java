@@ -48,7 +48,7 @@ public class HashSecurity {
 
 //        System.out.println(unHash(unHash("33383334333933373333333533383339333133323336")));
 //        System.out.println(hash(hash("",MD5),SHA256));
-//        System.out.println(privateHash(privateHash("84988872712")));
+        System.out.println(privateHash(privateHash("84834330388")));
     }
 }
 
