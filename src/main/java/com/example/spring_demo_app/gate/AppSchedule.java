@@ -43,7 +43,7 @@ public class AppSchedule {
     @Scheduled(cron = "0 0/10 * * * *", zone = "GMT+7:00")
     public void pingToServer() throws IOException {
 
-        Request request = new Request.Builder().url("https://shopee-tool.herokuapp.com/ping").build();
+        Request request = new Request.Builder().url("https://shopee-tool-1.herokuapp.com").build();
         Response response = client.newCall(request).execute();
 
         System.out.println(new Date() + " was pinged.\nhttps://shopee-tool.herokuapp.com/ping\n" + response.body().string());
