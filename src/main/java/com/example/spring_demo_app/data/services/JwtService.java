@@ -1,7 +1,6 @@
 package com.example.spring_demo_app.data.services;
 
 
-import org.springframework.security.core.Authentication;
 
 public interface JwtService {
     static final String SECRET_KEY = "123456789";

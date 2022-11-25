@@ -1,16 +1,9 @@
 package com.example.spring_demo_app.common.model;
 
 import com.example.spring_demo_app.common.date_time.DateTimeUtils;
-import com.example.spring_demo_app.common.logging.CustomURLFilter;
-import com.example.spring_demo_app.common.utils.RandomString;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Data

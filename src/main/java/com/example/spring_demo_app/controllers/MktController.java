@@ -7,7 +7,6 @@ import com.example.spring_demo_app.data.services.AccountService;
 import com.example.spring_demo_app.data.services.MktService;
 import com.example.spring_demo_app.domain.service.AccountServiceImpl;
 import com.example.spring_demo_app.domain.service.MktServiceImpl;
-import com.example.spring_demo_app.domain.service.UserServiceImpl;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

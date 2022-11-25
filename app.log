@@ -1,206 +1,51 @@
-2022-10-28 21:51:06.285  INFO 6223 --- [main] c.e.s.ShopeeToolApplication              : Starting ShopeeToolApplication using Java 11.0.11 on ca-rot-nho with PID 6223 (/media/taidm/RESOURCE/Shopee-lite/shopee-tool/target/classes started by taidm in /media/taidm/RESOURCE/Shopee-lite/shopee-tool)
-2022-10-28 21:51:06.322  INFO 6223 --- [main] c.e.s.ShopeeToolApplication              : No active profile set, falling back to 1 default profile: "default"
-2022-10-28 21:51:07.833  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-10-28 21:51:07.834  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-10-28 21:51:07.864  INFO 6223 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.spring_demo_app.repository.AccountRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2022-10-28 21:51:07.888  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
-2022-10-28 21:51:07.906  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-10-28 21:51:07.906  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-10-28 21:51:07.914  INFO 6223 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.spring_demo_app.repository.UserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2022-10-28 21:51:07.920  INFO 6223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 MongoDB repository interfaces.
-2022-10-28 21:51:08.335  INFO 6223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-10-28 21:51:08.340  INFO 6223 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-28 21:51:08.340  INFO 6223 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-10-28 21:51:08.403  INFO 6223 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-28 21:51:08.403  INFO 6223 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2001 ms
-2022-10-28 21:51:08.462  WARN 6223 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-10-28 21:51:08.529  INFO 6223 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-10-28 21:51:08.569  INFO 6223 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
-2022-10-28 21:51:08.671  INFO 6223 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-10-28 21:51:08.739  INFO 6223 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-10-28 21:51:08.831  INFO 6223 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-10-28 21:51:08.844  INFO 6223 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2022-10-28 21:51:09.272  INFO 6223 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-10-28 21:51:09.277  INFO 6223 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-10-28 21:51:09.729 DEBUG 6223 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
-2022-10-28 21:51:09.865  INFO 6223 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=shopeetoolsdb.c48vo.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-sywj5j-shard-0'}
-2022-10-28 21:51:09.907  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017 to client view of cluster
-2022-10-28 21:51:09.929  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017 to client view of cluster
-2022-10-28 21:51:09.930  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017 to client view of cluster
-2022-10-28 21:51:10.231 DEBUG 6223 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:18841}] to shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-rtt-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:15781}] to shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:15782}] to shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=221539878, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000277, setVersion=8, topologyVersion=TopologyVersion{processId=635b8dde96f1f30ead6b567c, counter=6}, lastWriteDate=Fri Oct 28 21:51:10 ICT 2022, lastUpdateTimeNanos=4419992949610}
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-rtt-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:18841}] to shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:16584}] to shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.282  INFO 6223 --- [cluster-rtt-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:16584}] to shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.283  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=222559885, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=635b8f2794b9d04f754c8413, counter=3}, lastWriteDate=Fri Oct 28 21:51:10 ICT 2022, lastUpdateTimeNanos=4419992949635}
-2022-10-28 21:51:10.283  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=224209796, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=635b8c90877a7930bae60d87, counter=4}, lastWriteDate=Fri Oct 28 21:51:10 ICT 2022, lastUpdateTimeNanos=4419992949657}
-2022-10-28 21:51:10.285  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000277 from replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.285  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 8 from replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.285  INFO 6223 --- [cluster-ClusterId{value='635bec5dd30fc1406da4cc9e', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
-2022-10-28 21:51:10.323 DEBUG 6223 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2022-10-28 21:51:10.329  INFO 6223 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c40402c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c9aeec6, org.springframework.security.web.header.HeaderWriterFilter@64f49b3, org.springframework.web.filter.CorsFilter@198524ec, org.springframework.security.web.authentication.logout.LogoutFilter@1e34840f, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@731fae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5bfdabf3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2041c9a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5edaa572, org.springframework.security.web.session.SessionManagementFilter@7ef7faa9, org.springframework.security.web.access.ExceptionTranslationFilter@782ed745, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@322f84fd]
-2022-10-28 21:51:10.388 DEBUG 6223 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
-2022-10-28 21:51:10.418 DEBUG 6223 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
-2022-10-28 21:51:10.554  INFO 6223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-28 21:51:10.566  INFO 6223 --- [main] c.e.s.ShopeeToolApplication              : Started ShopeeToolApplication in 4.75 seconds (JVM running for 5.665)
-2022-10-28 21:51:21.659  INFO 6223 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-28 21:51:21.660  INFO 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-28 21:51:21.660 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2022-10-28 21:51:21.660 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2022-10-28 21:51:21.660 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2022-10-28 21:51:21.661 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7e5c8c80
-2022-10-28 21:51:21.661 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@727de450
-2022-10-28 21:51:21.661 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
-2022-10-28 21:51:21.661  INFO 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-28 21:51:21.674 DEBUG 6223 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.LuckyController#all()
-2022-10-28 21:51:21.680  INFO 6223 --- [http-nio-8080-exec-1] c.e.s.common.logging.CustomURLFilter     : 
-LOGGING REQUEST-----------------------------------
-[REQUEST-ID]: 3vDH7g3sprkSozaA
-[PATH]: /api/v1/lucky/all
-[QUERIES]: null
-[HEADERS]: 
----host : localhost:8080
----connection : keep-alive
----sec-ch-ua : "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
----sec-ch-ua-mobile : ?0
----sec-ch-ua-platform : "Linux"
----upgrade-insecure-requests : 1
----user-agent : Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
----accept : text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
----sec-fetch-site : none
----sec-fetch-mode : navigate
----sec-fetch-user : ?1
----sec-fetch-dest : document
----accept-encoding : gzip, deflate, br
----accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
------------------------------------LOGGING REQUEST
-
-2022-10-28 21:51:21.682 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/v1/lucky/all]
-2022-10-28 21:51:21.683 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/lucky/all", parameters={}
-2022-10-28 21:51:21.684 DEBUG 6223 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.LuckyController#all()
-2022-10-28 21:51:27.866 DEBUG 6223 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.MktController#all()
-2022-10-28 21:51:27.867  INFO 6223 --- [http-nio-8080-exec-2] c.e.s.common.logging.CustomURLFilter     : 
-LOGGING REQUEST-----------------------------------
-[REQUEST-ID]: gnCVgSSocV73mGuq
-[PATH]: /api/v1/mkt/all
-[QUERIES]: null
-[HEADERS]: 
----host : localhost:8080
----connection : keep-alive
----sec-ch-ua : "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
----sec-ch-ua-mobile : ?0
----sec-ch-ua-platform : "Linux"
----upgrade-insecure-requests : 1
----user-agent : Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
----accept : text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
----sec-fetch-site : none
----sec-fetch-mode : navigate
----sec-fetch-user : ?1
----sec-fetch-dest : document
----accept-encoding : gzip, deflate, br
----accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
------------------------------------LOGGING REQUEST
-
-2022-10-28 21:51:27.867 DEBUG 6223 --- [http-nio-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/v1/mkt/all]
-2022-10-28 21:51:27.867 DEBUG 6223 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/mkt/all", parameters={}
-2022-10-28 21:51:27.868 DEBUG 6223 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.MktController#all()
-2022-10-28 21:51:29.402 DEBUG 6223 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-10-28 21:51:29.406  INFO 6223 --- [http-nio-8080-exec-2] c.e.s.common.logging.LoggingService      : 
-======||==============> LOGGING RESPONSE
-[REQUEST-ID]:gnCVgSSocV73mGuq
-
-{"at":"28/10/2022 21:51:29","request_id":"Reuqest id fake","error":{"code":0,"message":"Thành công"},"data":{"84378041531":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":0,\"checkin_list\":null,\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":0,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"208f6c97-c520-4297-b7a7-684f9b7bf41d\",\"rule_id\":0,\"success\":false,\"timestamp\":1666968688,\"today_index\":0,\"userid\":\"63807285\",\"username\":\"hoaithusky\"}}","84372119728":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":36,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":100,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"8e66460c-1f60-4555-9b70-a5b5c572cdaf\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968688,\"today_index\":1,\"userid\":\"125309036\",\"username\":\"saibaduoc1\"}}","84973463297":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":31,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":100,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"0be10985-abcf-4e51-9f64-dc2100fbdf3b\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968688,\"today_index\":3,\"userid\":\"869554783\",\"username\":\"7faj7dlqfc\"}}","84973589126":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":49,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":200,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"093701b6-2bbf-4ea5-a2dc-488be3ad4633\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968688,\"today_index\":7,\"userid\":\"82641276\",\"username\":\"saidiep\"}}","84589427969":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":38,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":100,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"e1327c79-0aa2-418a-9bab-fa1422c28489\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968688,\"today_index\":3,\"userid\":\"863729721\",\"username\":\"zgopbtowd4\"}}","84834330388":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:29+08:00\",\"check_in_day\":35,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":200,\"increase_time\":1666968689,\"ip_addr\":\"42.114.232.117\",\"logid\":\"5d150984-fe5a-4a3d-b331-5f9704d9544f\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968689,\"today_index\":7,\"userid\":\"870542981\",\"username\":\"mtexcza7n9\"}}","84988872712":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:29+08:00\",\"check_in_day\":36,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":100,\"increase_time\":1666968689,\"ip_addr\":\"42.114.232.117\",\"logid\":\"165a3f44-a0c3-4d69-9512-020fe7525f50\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968689,\"today_index\":1,\"userid\":\"136981687\",\"username\":\"doxuannguyen1973\"}}","84943574556":"{\"code\":0,\"msg\":\"success\",\"data\":{\"@timestamp\":\"2022-10-28T22:51:28+08:00\",\"check_in_day\":80,\"checkin_list\":[100,100,100,100,100,100,200,100],\"dataview_type\":\"checkin\",\"deviceid\":\"gY2N4BOQiNOVGnnu9oFW6NpJFgfoeS6k\",\"devicetype\":\"PC\",\"err_msg\":\"\",\"increase_coins\":100,\"increase_time\":1666968688,\"ip_addr\":\"42.114.232.117\",\"logid\":\"14ba1c8e-79f3-43ec-bcc5-b8ae77e3b901\",\"rule_id\":21,\"success\":true,\"timestamp\":1666968688,\"today_index\":3,\"userid\":\"48688687\",\"username\":\"manhtai831\"}}"}}
-
-<===============||===== LOGGING RESPONSE
-2022-10-28 21:51:29.412 DEBUG 6223 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=28/10/2022 21:51:29, request_id=Reuqest id fake, error=Error(code=0, message=Thành c (truncated)...]
-2022-10-28 21:51:29.429 DEBUG 6223 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-10-28 21:51:29.430 DEBUG 6223 --- [http-nio-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/v1/mkt/all]
-2022-10-28 21:51:29.470 DEBUG 6223 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
-2022-10-28 21:51:29.470  INFO 6223 --- [http-nio-8080-exec-3] c.e.s.common.logging.CustomURLFilter     : 
-LOGGING REQUEST-----------------------------------
-[REQUEST-ID]: YRR2AcBIPoGVDpnt
-[PATH]: /favicon.ico
-[QUERIES]: null
-[HEADERS]: 
----host : localhost:8080
----connection : keep-alive
----sec-ch-ua : "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
----sec-ch-ua-mobile : ?0
----user-agent : Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
----sec-ch-ua-platform : "Linux"
----accept : image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
----sec-fetch-site : same-origin
----sec-fetch-mode : no-cors
----sec-fetch-dest : image
----referer : http://localhost:8080/api/v1/mkt/all
----accept-encoding : gzip, deflate, br
----accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
------------------------------------LOGGING REQUEST
-
-2022-10-28 21:51:29.471 DEBUG 6223 --- [http-nio-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /favicon.ico]
-2022-10-28 21:51:29.471 DEBUG 6223 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
-2022-10-28 21:51:29.471 DEBUG 6223 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
-2022-10-28 21:51:29.475 DEBUG 6223 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-10-28 21:51:29.475  INFO 6223 --- [http-nio-8080-exec-3] c.e.s.common.logging.LoggingService      : 
-======||==============> LOGGING RESPONSE
-[REQUEST-ID]:YRR2AcBIPoGVDpnt
-
-{"at":"28/10/2022 21:51:29","request_id":"Reuqest id fake","error":{"code":99,"message":"Đã có lỗi xảy ra"},"data":"/favicon.ico not found"}
-
-<===============||===== LOGGING RESPONSE
-2022-10-28 21:51:29.477 DEBUG 6223 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=28/10/2022 21:51:29, request_id=Reuqest id fake, error=Error(code=99, message=Đã có  (truncated)...]
-2022-10-28 21:51:29.493 DEBUG 6223 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-10-28 21:51:29.494 DEBUG 6223 --- [http-nio-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /favicon.ico]
-2022-10-28 21:51:50.172 DEBUG 6223 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-10-28 21:51:50.173  INFO 6223 --- [http-nio-8080-exec-1] c.e.s.common.logging.LoggingService      : 
-======||==============> LOGGING RESPONSE
-[REQUEST-ID]:3vDH7g3sprkSozaA
-
-{"at":"28/10/2022 21:51:50","request_id":"Reuqest id fake","error":{"code":0,"message":"Thành công"},"data":{"84378041531":{"phone_verified":true,"is_authenticated":true,"my_number":"935781","my_submission_time":"2022-10-28T14:51:30Z","is_first_pick_today":true},"84372119728":{"phone_verified":true,"is_authenticated":true,"my_number":"810001","my_submission_time":"2022-10-28T14:51:39Z","is_first_pick_today":true},"84973463297":{"phone_verified":true,"is_authenticated":true,"my_number":"234731","my_submission_time":"2022-10-28T14:51:43Z","is_first_pick_today":true},"84973589126":{"phone_verified":true,"is_authenticated":true,"my_number":"908672","my_submission_time":"2022-10-28T14:51:26Z","is_first_pick_today":true},"84589427969":{"phone_verified":true,"is_authenticated":true,"my_number":"187323","my_submission_time":"2022-10-28T14:51:35Z","is_first_pick_today":true},"84988872712":{"phone_verified":true,"is_authenticated":true,"my_number":"779064","my_submission_time":"2022-10-28T14:51:47Z","is_first_pick_today":true},"84943574556":{"phone_verified":true,"is_authenticated":true,"my_number":"461748","my_submission_time":"2022-10-28T14:51:23Z","is_first_pick_today":true}}}
-
-<===============||===== LOGGING RESPONSE
-2022-10-28 21:51:50.174 DEBUG 6223 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=28/10/2022 21:51:50, request_id=Reuqest id fake, error=Error(code=0, message=Thành c (truncated)...]
-2022-10-28 21:51:50.176 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-10-28 21:51:50.176 DEBUG 6223 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /api/v1/lucky/all]
-2022-10-28 21:51:50.243 DEBUG 6223 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
-2022-10-28 21:51:50.244  INFO 6223 --- [http-nio-8080-exec-6] c.e.s.common.logging.CustomURLFilter     : 
-LOGGING REQUEST-----------------------------------
-[REQUEST-ID]: vPqEYVnKsVvvFX0f
-[PATH]: /favicon.ico
-[QUERIES]: null
-[HEADERS]: 
----host : localhost:8080
----connection : keep-alive
----sec-ch-ua : "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
----sec-ch-ua-mobile : ?0
----user-agent : Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
----sec-ch-ua-platform : "Linux"
----accept : image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
----sec-fetch-site : same-origin
----sec-fetch-mode : no-cors
----sec-fetch-dest : image
----referer : http://localhost:8080/api/v1/lucky/all
----accept-encoding : gzip, deflate, br
----accept-language : vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5
------------------------------------LOGGING REQUEST
-
-2022-10-28 21:51:50.244 DEBUG 6223 --- [http-nio-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /favicon.ico]
-2022-10-28 21:51:50.244 DEBUG 6223 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
-2022-10-28 21:51:50.245 DEBUG 6223 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.spring_demo_app.controllers.UnknownController#getUnknown(HttpServletRequest)
-2022-10-28 21:51:50.245 DEBUG 6223 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-10-28 21:51:50.246  INFO 6223 --- [http-nio-8080-exec-6] c.e.s.common.logging.LoggingService      : 
-======||==============> LOGGING RESPONSE
-[REQUEST-ID]:vPqEYVnKsVvvFX0f
-
-{"at":"28/10/2022 21:51:50","request_id":"Reuqest id fake","error":{"code":99,"message":"Đã có lỗi xảy ra"},"data":"/favicon.ico not found"}
-
-<===============||===== LOGGING RESPONSE
-2022-10-28 21:51:50.246 DEBUG 6223 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [BaseResponse(at=28/10/2022 21:51:50, request_id=Reuqest id fake, error=Error(code=99, message=Đã có  (truncated)...]
-2022-10-28 21:51:50.246 DEBUG 6223 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-10-28 21:51:50.247 DEBUG 6223 --- [http-nio-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : GET /favicon.ico]
-2022-10-28 21:52:14.003  INFO 6223 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-10-28 21:52:14.014  INFO 6223 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-10-28 21:52:14.017  INFO 6223 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-25 17:01:12.669  INFO 90818 --- [main] c.e.s.ShopeeToolApplication              : Starting ShopeeToolApplication using Java 11.0.17 on Ca-Rot-Nho with PID 90818 (/media/manhtai831/RESOURCE/Shopee-lite/shopee-tool/target/classes started by manhtai831 in /media/manhtai831/RESOURCE/Shopee-lite/shopee-tool)
+2022-11-25 17:01:12.684  INFO 90818 --- [main] c.e.s.ShopeeToolApplication              : No active profile set, falling back to 1 default profile: "default"
+2022-11-25 17:01:13.333  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-25 17:01:13.336  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-25 17:01:13.383  INFO 90818 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.spring_demo_app.repository.AccountRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-11-25 17:01:13.414  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interfaces.
+2022-11-25 17:01:13.437  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-25 17:01:13.438  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-25 17:01:13.448  INFO 90818 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.spring_demo_app.repository.UserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-11-25 17:01:13.457  INFO 90818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 MongoDB repository interfaces.
+2022-11-25 17:01:13.975  INFO 90818 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-25 17:01:13.985  INFO 90818 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-25 17:01:13.986  INFO 90818 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-11-25 17:01:14.069  INFO 90818 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-25 17:01:14.069  INFO 90818 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1341 ms
+2022-11-25 17:01:14.177  WARN 90818 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-25 17:01:14.274  INFO 90818 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-25 17:01:14.320  INFO 90818 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-11-25 17:01:14.465  INFO 90818 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-25 17:01:14.553  INFO 90818 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-25 17:01:14.696  INFO 90818 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-25 17:01:14.724  INFO 90818 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-11-25 17:01:15.332  INFO 90818 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-25 17:01:15.343  INFO 90818 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-25 17:01:16.004 DEBUG 90818 --- [main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2022-11-25 17:01:16.146  INFO 90818 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=shopeetoolsdb.c48vo.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-sywj5j-shard-0'}
+2022-11-25 17:01:16.185  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017 to client view of cluster
+2022-11-25 17:01:16.221  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017 to client view of cluster
+2022-11-25 17:01:16.223  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-srv-shopeetoolsdb.c48vo.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017 to client view of cluster
+2022-11-25 17:01:16.601 DEBUG 90818 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:129348}] to shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-rtt-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:138738}] to shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:125253}] to shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-rtt-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:125253}] to shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:138738}] to shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.621  INFO 90818 --- [cluster-rtt-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:129348}] to shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.622  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=270719864, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=637ce2f37d57ed655c089c3e, counter=3}, lastWriteDate=Fri Nov 25 17:01:16 ICT 2022, lastUpdateTimeNanos=33725626896886}
+2022-11-25 17:01:16.622  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=271076252, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000283, setVersion=8, topologyVersion=TopologyVersion{processId=637cde52a7c8cb5f6adfc070, counter=7}, lastWriteDate=Fri Nov 25 17:01:16 ICT 2022, lastUpdateTimeNanos=33725626896868}
+2022-11-25 17:01:16.622  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=269343116, setName='atlas-sywj5j-shard-0', canonicalAddress=shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, hosts=[shopeetoolsdb-shard-00-00.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017, shopeetoolsdb-shard-00-02.c48vo.mongodb.net:27017], passives=[], arbiters=[], primary='shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='GCP'}, Tag{name='region', value='SOUTHEASTERN_ASIA_PACIFIC'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=637cd9c88df8f411eb0e5c4e, counter=9}, lastWriteDate=Fri Nov 25 17:01:16 ICT 2022, lastUpdateTimeNanos=33725626896797}
+2022-11-25 17:01:16.627  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000283 from replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.627  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 8 from replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.627  INFO 90818 --- [cluster-ClusterId{value='6380926cf098f36f9ba7c7ea', description='null'}-shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary shopeetoolsdb-shard-00-01.c48vo.mongodb.net:27017
+2022-11-25 17:01:16.722 DEBUG 90818 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-11-25 17:01:16.729  INFO 90818 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f5f4d48, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f2a7ca0, org.springframework.security.web.header.HeaderWriterFilter@4b518645, org.springframework.web.filter.CorsFilter@2f025e9e, org.springframework.security.web.authentication.logout.LogoutFilter@2a317af7, com.example.spring_demo_app.common.security.JwtAuthenticationFilter@28654aff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e8e02a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@531b1778, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c8e096, org.springframework.security.web.session.SessionManagementFilter@7091a016, org.springframework.security.web.access.ExceptionTranslationFilter@f391e52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d60cbad]
+2022-11-25 17:01:16.812 DEBUG 90818 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 2 ResponseBodyAdvice
+2022-11-25 17:01:16.858 DEBUG 90818 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 2 ResponseBodyAdvice
+2022-11-25 17:01:17.022  INFO 90818 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-25 17:01:17.037  INFO 90818 --- [main] c.e.s.ShopeeToolApplication              : Started ShopeeToolApplication in 4.784 seconds (JVM running for 5.061)
+2022-11-25 17:01:28.433  INFO 90818 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-25 17:01:28.436  INFO 90818 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-25 17:01:28.438  INFO 90818 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

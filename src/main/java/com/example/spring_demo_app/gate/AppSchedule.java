@@ -1,6 +1,5 @@
 package com.example.spring_demo_app.gate;
 
-import com.example.spring_demo_app.controllers.AccountController;
 import com.example.spring_demo_app.controllers.LuckyController;
 import com.example.spring_demo_app.controllers.MktController;
 import okhttp3.OkHttpClient;
@@ -21,14 +20,12 @@ public class AppSchedule {
     private final MktController mktController;
     private final LuckyController luckyController;
 
-
     @Autowired
     public AppSchedule(OkHttpClient client, MktController mktController, LuckyController luckyController) {
         this.client = client;
         this.mktController = mktController;
         this.luckyController = luckyController;
     }
-
 
     @Scheduled(cron = "0 30 6 * * *", zone = "GMT+7:00")
     public void getCoinDaily() throws IOException, NoSuchAlgorithmException {
@@ -42,10 +39,12 @@ public class AppSchedule {
 
     @Scheduled(cron = "0 0/10 * * * *", zone = "GMT+7:00")
     public void pingToServer() throws IOException {
-
-        Request request = new Request.Builder().url("https://shopee-tool-1.herokuapp.com").build();
+        String urlHost0 = "https://shopee-tool.herokuapp.com";
+        // String urlHost1 = "https://shopee-tool-1.herokuapp.com";
+        Request request = new Request.Builder().url(urlHost0).build();
         Response response = client.newCall(request).execute();
 
-        System.out.println(new Date() + " was pinged.\nhttps://shopee-tool.herokuapp.com/ping\n" + response.body().string());
+        System.out.println(
+                new Date() + " was pinged.\nhttps://shopee-tool.herokuapp.com/ping\n" + response.body().string());
     }
 }

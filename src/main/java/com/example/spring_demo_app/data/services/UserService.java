@@ -3,10 +3,8 @@ package com.example.spring_demo_app.data.services;
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
-import okhttp3.Response;
 import org.springframework.data.domain.Page;
 
-import java.io.IOException;
 
 public interface UserService {
 

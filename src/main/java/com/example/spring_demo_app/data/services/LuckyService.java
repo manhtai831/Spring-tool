@@ -2,7 +2,6 @@ package com.example.spring_demo_app.data.services;
 
 import com.example.spring_demo_app.data.model.GateModel;
 import com.example.spring_demo_app.data.model.LuckyGroupSession;
-import com.example.spring_demo_app.data.model.LuckyThemeModel;
 
 import java.io.IOException;
 

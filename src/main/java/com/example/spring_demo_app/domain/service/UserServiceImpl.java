@@ -1,6 +1,5 @@
 package com.example.spring_demo_app.domain.service;
 
-import com.example.spring_demo_app.common.contants.ShopeeConstants;
 import com.example.spring_demo_app.common.exception.AppAuthenticationException;
 import com.example.spring_demo_app.common.exception.LoginException;
 import com.example.spring_demo_app.data.model.UserModel;
@@ -8,9 +7,6 @@ import com.example.spring_demo_app.data.services.UserService;
 import com.example.spring_demo_app.domain.entity.UserEntity;
 import com.example.spring_demo_app.repository.UserRepository;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,10 +14,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.Optional;
 
-import static com.example.spring_demo_app.common.HeaderStored.MEDIA_TYPE;
 
 @Service
 public class UserServiceImpl implements UserService {
